@@ -1158,3 +1158,7 @@
 </script>
 </body>
 </html>
+
+git add .
+git commit -m "Add website"
+git push
