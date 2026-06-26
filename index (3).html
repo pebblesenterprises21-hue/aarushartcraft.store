@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -234,9 +234,14 @@
   .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(45,27,105,.14); }
   .product-img {
     height: 200px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 4.5rem;
     position: relative;
+    overflow: hidden;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .product-badge {
     position: absolute; top: 12px; left: 12px;
@@ -697,121 +702,77 @@
   <div class="products-grid">
 
     <div class="product-card" onclick="openProductModal()">
-      <div class="product-img" style="background: linear-gradient(135deg,#EDE9FE,#DDD6FE);">
-        <div class="product-badge">Bestseller</div>
-        🏯
+      <div class="product-img" style="background:linear-gradient(135deg,#FFB347,#FF6B6B);padding:0;overflow:hidden;">
+        <div class="product-badge">Handmade</div>
+        <img src="file_00000000fcd4720bad04712e54f9e134.png" alt="Ganesha Figurines" style="width:100%;height:200px;object-fit:cover;display:block;">
       </div>
       <div class="product-body">
-        <h3>MDF Taj Mahal Colouring Kit</h3>
-        <div class="product-age">👶 Ages 6–14 · DIY MDF Kit</div>
+        <h3>Ganesha Figurines</h3>
+        <div class="product-age">🎨 Handmade · Decorative Art</div>
         <div class="product-footer">
-          <div class="product-price"><del>₹599</del> ₹399</div>
+          <div class="product-price">₹100</div>
           <button class="btn-add">Add to Cart</button>
         </div>
       </div>
     </div>
 
     <div class="product-card" onclick="openProductModal()">
-      <div class="product-img" style="background: linear-gradient(135deg,#CCFBF1,#A7F3D0);">
+      <div class="product-img" style="background:linear-gradient(135deg,#667eea,#764ba2);padding:0;overflow:hidden;">
         <div class="product-badge">New</div>
-        🐘
+        <img src="IMG20260624183019.jpg" alt="Avengers MDF Painting Kit" style="width:100%;height:200px;object-fit:cover;display:block;">
       </div>
       <div class="product-body">
-        <h3>POP Elephant Painting Kit</h3>
-        <div class="product-age">👶 Ages 5–12 · POP Painting</div>
+        <h3>Avengers MDF Painting Kit</h3>
+        <div class="product-age">🎨 Painting Kit · Art and Craft</div>
         <div class="product-footer">
-          <div class="product-price"><del>₹499</del> ₹329</div>
+          <div class="product-price">₹120</div>
           <button class="btn-add">Add to Cart</button>
         </div>
       </div>
     </div>
 
     <div class="product-card" onclick="openProductModal()">
-      <div class="product-img" style="background: linear-gradient(135deg,#FEF3C7,#FDE68A);">
-        🌱
+      <div class="product-img" style="background:linear-gradient(135deg,#f093fb,#f5576c);padding:0;overflow:hidden;">
+        <img src="file_00000000b2e47209952a473d9799f5a6.png" alt="Unicorn Pop Painting Kit" style="width:100%;height:200px;object-fit:cover;display:block;">
       </div>
       <div class="product-body">
-        <h3>Terrarium Science Kit</h3>
-        <div class="product-age">👶 Ages 8–15 · Science Kit</div>
+        <h3>Unicorn Pop Painting Kit</h3>
+        <div class="product-age">🎨 Painting Kit · Art and Craft</div>
         <div class="product-footer">
-          <div class="product-price"><del>₹799</del> ₹549</div>
+          <div class="product-price">₹100</div>
           <button class="btn-add">Add to Cart</button>
         </div>
       </div>
     </div>
 
     <div class="product-card" onclick="openProductModal()">
-      <div class="product-img" style="background: linear-gradient(135deg,#FCE7F3,#FBCFE8);">
-        <div class="product-badge">Hot 🔥</div>
-        🪔
+      <div class="product-img" style="background:linear-gradient(135deg,#0f0c29,#302b63);padding:0;overflow:hidden;">
+        <img src="file_0000000091dc7207972a56cb6f57503c.png" alt="Space Theme Pop Painting Kit" style="width:100%;height:200px;object-fit:cover;display:block;">
       </div>
       <div class="product-body">
-        <h3>Diwali Diya Decoration Kit</h3>
-        <div class="product-age">👶 Ages 4–12 · Festival Kit</div>
+        <h3>Space Theme Painting Kit</h3>
+        <div class="product-age">🎨 Painting Kit · POP</div>
         <div class="product-footer">
-          <div class="product-price">₹299</div>
+          <div class="product-price">₹100</div>
           <button class="btn-add">Add to Cart</button>
         </div>
       </div>
     </div>
 
-    <div class="product-card" onclick="openProductModal()">
-      <div class="product-img" style="background: linear-gradient(135deg,#DBEAFE,#BFDBFE);">
-        🧩
-      </div>
-      <div class="product-body">
-        <h3>Wooden Animal Puzzle Kit</h3>
-        <div class="product-age">👶 Ages 3–8 · Wooden Craft</div>
-        <div class="product-footer">
-          <div class="product-price"><del>₹449</del> ₹299</div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card" onclick="openProductModal()">
-      <div class="product-img" style="background: linear-gradient(135deg,#F0FDF4,#BBF7D0);">
-        📚
-      </div>
-      <div class="product-body">
-        <h3>Alphabet Activity Workbook Kit</h3>
-        <div class="product-age">👶 Ages 3–7 · Educational</div>
-        <div class="product-footer">
-          <div class="product-price">₹249</div>
-          <button class="btn-add">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CATEGORIES -->
-<section id="categories">
-  <div class="categories-header">
-    <div class="section-eyebrow" style="color:#FFD932">Browse by Category</div>
-    <h2 class="section-title">Find the Perfect Kit</h2>
-    <p class="section-sub">Six distinct lines, each designed around a different way kids love to create.</p>
-  </div>
-  <div class="categories-grid">
-    <div class="cat-card cat-1"><span class="cat-icon">🏯</span><h3>DIY MDF Colouring Kits</h3></div>
-    <div class="cat-card cat-2"><span class="cat-icon">🎨</span><h3>POP Painting Kits</h3></div>
-    <div class="cat-card cat-3"><span class="cat-icon">🪵</span><h3>Wooden Craft Kits</h3></div>
-    <div class="cat-card cat-4"><span class="cat-icon">🔬</span><h3>Science Project Kits</h3></div>
-    <div class="cat-card cat-5"><span class="cat-icon">📖</span><h3>Educational Activity Kits</h3></div>
-    <div class="cat-card cat-6"><span class="cat-icon">🪔</span><h3>Festival Craft Kits</h3></div>
   </div>
 </section>
 
 <!-- PRODUCT DETAIL -->
 <section id="product-detail">
   <div class="section-eyebrow">Product Spotlight</div>
-  <h2 class="section-title" style="margin-bottom:40px">MDF Taj Mahal Colouring Kit</h2>
+  <h2 class="section-title" style="margin-bottom:40px">Avengers MDF Painting Kit</h2>
   <div class="product-detail-grid">
     <div>
-      <div class="detail-img-main">🏯</div>
+      <div class="detail-img-main">
+        <img src="IMG20260624183019.jpg" alt="Avengers MDF Painting Kit" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+      </div>
       <div class="detail-thumbnails">
-        <div class="thumb active">🏯</div>
+        <div class="thumb active">🦸</div>
         <div class="thumb">🎨</div>
         <div class="thumb">📦</div>
         <div class="thumb">✅</div>
@@ -820,24 +781,23 @@
     <div>
       <div class="detail-rating">
         <span class="stars">★★★★★</span>
-        <span>4.9 · 284 reviews</span>
+        <span>4.9 · 128 reviews</span>
       </div>
-      <div class="detail-price"><del>₹599</del> ₹399</div>
-      <span class="savings-tag">🎉 Save ₹200 (33% off)</span>
-      <p class="detail-desc">A pre-cut MDF replica of the iconic Taj Mahal — ready to colour, paint, and display. A perfect weekend activity that builds focus, patience, and pride in every child.</p>
+      <div class="detail-price"><del>₹200</del> ₹120</div>
+      <span class="savings-tag">🎉 Save ₹80 (40% off)</span>
+      <p class="detail-desc">Pre-cut MDF replicas of Iron Man, Spiderman, Captain America & Superman — ready to colour, paint, and display. A perfect weekend activity that builds focus, patience, and pride in every child.</p>
 
       <div class="detail-section-label">What's Included</div>
       <ul class="includes-list">
-        <li>🏯 Pre-cut MDF base</li>
+        <li>4 Pre-cut MDF figures</li>
         <li>🎨 6 acrylic paints</li>
-        <li>🖌️ 2 paint brushes</li>
+        <li>🖌️ 1 paint brush</li>
         <li>✏️ Outline guide sheet</li>
         <li>📋 Step-by-step instructions</li>
-        <li>🧤 Protective gloves</li>
       </ul>
 
       <div class="detail-meta">
-        <div class="meta-item"><strong>👶 Age Group</strong>6 – 14 years</div>
+        <div class="meta-item"><strong>👶 Age Group</strong>6–14 years</div>
         <div class="meta-item"><strong>⏱️ Time</strong>~2 hours</div>
         <div class="meta-item"><strong>🚚 Shipping</strong>3–5 business days</div>
         <div class="meta-item"><strong>📦 Weight</strong>350 g</div>
@@ -894,83 +854,6 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews">
-  <div class="reviews-header">
-    <div class="section-eyebrow">Customer Love</div>
-    <h2 class="section-title">What Parents Are Saying</h2>
-    <p class="section-sub">Real families, real results — and a lot of very proud little artists.</p>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"My 8-year-old refused to put the Taj Mahal kit down until it was finished. The instructions are crystal clear and the quality of the MDF is wonderful!"</p>
-      <div class="reviewer">
-        <div class="reviewer-avatar" style="background:#EDE9FE;">👩</div>
-        <div>
-          <div class="reviewer-name">Priya Sharma</div>
-          <div class="reviewer-meta">Mom of 2 · Delhi · MDF Kit</div>
-        </div>
-      </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Ordered the Science Terrarium kit for my daughter's birthday — she was absolutely mesmerised. Ships fast and everything was neatly packed. Will buy again!"</p>
-      <div class="reviewer">
-        <div class="reviewer-avatar" style="background:#CCFBF1;">👨</div>
-        <div>
-          <div class="reviewer-name">Rahul Mehta</div>
-          <div class="reviewer-meta">Dad · Mumbai · Science Kit</div>
-        </div>
-      </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"The Diwali kit was a big hit with our whole family! Kids painted diyas together, and the non-toxic paints made me feel completely at ease. Gifting more this Diwali!"</p>
-      <div class="reviewer">
-        <div class="reviewer-avatar" style="background:#FCE7F3;">👩</div>
-        <div>
-          <div class="reviewer-name">Ananya Iyer</div>
-          <div class="reviewer-meta">Mom · Bangalore · Festival Kit</div>
-        </div>
-      </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★☆</div>
-      <p class="review-text">"Great value for the price! The wooden puzzle kit kept my 5-year-old busy for two whole afternoons. Delivery was faster than expected."</p>
-      <div class="reviewer">
-        <div class="reviewer-avatar" style="background:#FEF3C7;">👨</div>
-        <div>
-          <div class="reviewer-name">Suresh Nair</div>
-          <div class="reviewer-meta">Dad · Pune · Wooden Craft</div>
-        </div>
-      </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"The activity workbook kit has made learning alphabets so much more engaging for my preschooler. She asks for 'craft time' every evening now!"</p>
-      <div class="reviewer">
-        <div class="reviewer-avatar" style="background:#DBEAFE;">👩</div>
-        <div>
-          <div class="reviewer-name">Meera Krishnan</div>
-          <div class="reviewer-meta">Mom · Chennai · Educational Kit</div>
-        </div>
-      </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Perfect gift for my nephew's birthday! The POP painting kit looked so professional when finished — he wants to frame it. Brilliant product."</p>
-      <div class="reviewer">
-        <div class="reviewer-avatar" style="background:#F0FDF4;">👩</div>
-        <div>
-          <div class="reviewer-name">Divya Kapoor</div>
-          <div class="reviewer-meta">Aunt · Hyderabad · POP Kit</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
@@ -1005,8 +888,8 @@
         <a href="https://wa.me/919566087705" class="channel-btn channel-wa" target="_blank">
           <span style="font-size:1.3rem">💬</span> Chat on WhatsApp
         </a>
-        <a href="mailto:hello@aarushartcraft.in" class="channel-btn channel-email">
-          <span style="font-size:1.2rem">✉️</span> hello@aarushartcraft.in
+        <a href="mailto:pebblesenterprises21@gmail.com" class="channel-btn channel-email">
+          <span style="font-size:1.2rem">✉️</span> pebblesenterprises21@gmail.com
         </a>
       </div>
       <div class="social-links">
@@ -1225,3 +1108,4 @@
 </script>
 </body>
 </html>
+     
