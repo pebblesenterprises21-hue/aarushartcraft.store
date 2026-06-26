@@ -1109,16 +1109,70 @@
 
 <script>
   /* ── Cart counter ── */
-  let cartCount = 0;
-  document.querySelectorAll('.btn-add, .btn-cart').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      cartCount++;
-      document.querySelector('.nav-cart').textContent = `🛒 Cart (${cartCount})`;
-      btn.textContent = '✅ Added!';
-      setTimeout(() => btn.textContent = btn.classList.contains('btn-cart') ? '🛒 Add to Cart' : 'Add to Cart', 1200);
-    });
+  // Cart items storage
+let cartItems = [];
+
+// Updated Add to Cart
+document.querySelectorAll('.btn-add').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = btn.closest('.product-card');
+    const name = card.querySelector('h3').textContent;
+    const priceEl = card.querySelector('.product-price');
+    const price = priceEl.textContent.replace(/[^\d]/g, '').slice(-3);
+    
+    const existing = cartItems.find(i => i.name === name);
+    if(existing) existing.qty++;
+    else cartItems.push({name, price: parseInt(price), qty: 1});
+    
+    cartCount++;
+    document.querySelector('.nav-cart').textContent = `🛒 Cart (${cartCount})`;
+    btn.textContent = '✅ Added!';
+    setTimeout(() => btn.textContent = 'Add to Cart', 1200);
   });
+});
+
+// Cart modal open
+document.querySelector('.nav-cart').addEventListener('click', () => {
+  if(cartItems.length === 0){
+    alert('Your cart is empty!');
+    return;
+  }
+  let total = 0;
+  let itemsHTML = cartItems.map(i => {
+    total += i.price * i.qty;
+    return `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee">
+      <span>${i.name} x${i.qty}</span>
+      <span>₹${i.price * i.qty}</span>
+    </div>`;
+  }).join('');
+
+  let msg = encodeURIComponent(
+    'Hello! I want to order:\n' +
+    cartItems.map(i => `- ${i.name} x${i.qty} = ₹${i.price * i.qty}`).join('\n') +
+    `\nTotal: ₹${total}`
+  );
+
+  document.body.insertAdjacentHTML('beforeend', `
+    <div id="cart-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center">
+      <div style="background:#fff;border-radius:16px;padding:24px;width:90%;max-width:400px">
+        <h2 style="margin-bottom:16px">🛒 Your Cart</h2>
+        ${itemsHTML}
+        <div style="display:flex;justify-content:space-between;font-weight:bold;padding:12px 0">
+          <span>Total</span><span>₹${total}</span>
+        </div>
+        <a href="https://wa.me/919566087705?text=${msg}" target="_blank"
+          style="display:block;background:#25D366;color:#fff;text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:12px">
+          📲 Order on WhatsApp
+        </a>
+        <button onclick="document.getElementById('cart-modal').remove()"
+          style="display:block;width:100%;padding:12px;margin-top:8px;border:none;border-radius:10px;background:#eee;cursor:pointer">
+          Close
+        </button>
+      </div>
+    </div>
+  `);
+});
 
   /* ── Thumbnails ── */
   document.querySelectorAll('.thumb').forEach(t => {
