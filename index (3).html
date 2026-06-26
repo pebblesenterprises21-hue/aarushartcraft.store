@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarush Art Craft – Creative DIY Kits for Kids</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow:   #FFD932;
+    --orange:   #FF6B2B;
+    --teal:     #00B4A0;
+    --pink:     #FF4E8B;
+    --purple:   #7C3AED;
+    --navy:     #1A1240;
+    --cream:    #FFFBF0;
+    --white:    #FFFFFF;
+    --gray:     #F3F0E8;
+    --text:     #2D1B69;
+    --muted:    #6B5E8A;
+    --font-display: 'Baloo 2', cursive;
+    --font-body:    'Nunito', sans-serif;
+    --radius:   16px;
+    --radius-lg:32px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 64px;
+    box-shadow: 0 4px 20px rgba(26,18,64,.4);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem; font-weight: 800;
+    color: var(--yellow);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: #C9C0FF; text-decoration: none;
+    font-size: .9rem; font-weight: 600; letter-spacing: .3px;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--yellow); }
+  .nav-cart {
+    background: var(--yellow); color: var(--navy);
+    border: none; border-radius: 50px;
+    padding: 8px 20px;
+    font-family: var(--font-display); font-weight: 700; font-size: .9rem;
+    cursor: pointer; transition: transform .15s, box-shadow .15s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .nav-cart:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255,217,50,.4); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--yellow); border-radius: 2px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 5vw 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(124,58,237,.35) 0%, transparent 55%),
+      radial-gradient(circle at 20% 80%, rgba(0,180,160,.25) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  /* Floating blobs */
+  .blob {
+    position: absolute; border-radius: 50%;
+    opacity: .18; animation: float 6s ease-in-out infinite;
+  }
+  .blob-1 { width: 320px; height: 320px; background: var(--orange); top: -80px; right: 10%; animation-delay: 0s; }
+  .blob-2 { width: 200px; height: 200px; background: var(--pink);  bottom: 5%;  right: 25%; animation-delay: 2s; }
+  .blob-3 { width: 160px; height: 160px; background: var(--teal);  top: 20%;   left: 5%;  animation-delay: 4s; }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-20px) scale(1.04); }
+  }
+
+  .hero-text { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--orange); color: #fff;
+    font-family: var(--font-display); font-weight: 700; font-size: .8rem;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800; line-height: 1.1;
+    color: var(--white); margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--yellow);
+    position: relative; display: inline-block;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute; left: 0; bottom: -4px;
+    width: 100%; height: 4px;
+    background: var(--orange); border-radius: 4px;
+  }
+  .hero-sub {
+    color: #C9C0FF; font-size: 1.1rem; line-height: 1.6;
+    max-width: 480px; margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--yellow); color: var(--navy);
+    font-family: var(--font-display); font-weight: 800; font-size: 1rem;
+    padding: 14px 32px; border-radius: 50px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 6px 24px rgba(255,217,50,.35);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(255,217,50,.5); }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+    padding: 14px 32px; border-radius: 50px;
+    border: 2px solid rgba(255,255,255,.35); cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+  .hero-visual {
+    position: relative; z-index: 2;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-img-frame {
+    width: 420px; height: 420px; max-width: 90%;
+    border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+    background: linear-gradient(135deg, var(--purple) 0%, var(--teal) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9rem;
+    animation: morph 8s ease-in-out infinite, float 5s ease-in-out infinite;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  }
+  @keyframes morph {
+    0%,100% { border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%; }
+    33%      { border-radius: 60% 40% 45% 55% / 55% 60% 40% 45%; }
+    66%      { border-radius: 45% 55% 60% 40% / 40% 55% 45% 60%; }
+  }
+  .hero-stat-chips {
+    position: absolute;
+    bottom: -20px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 12px;
+  }
+  .chip {
+    background: var(--white); border-radius: 50px;
+    padding: 8px 18px; font-weight: 700; font-size: .85rem;
+    color: var(--navy); white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  }
+  .chip span { color: var(--orange); }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--yellow);
+    padding: 14px 5vw;
+    overflow: hidden; white-space: nowrap;
+  }
+  .trust-scroll {
+    display: inline-flex; gap: 60px;
+    animation: scroll-x 25s linear infinite;
+  }
+  @keyframes scroll-x {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .trust-item {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: .95rem; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  /* ── SECTIONS SHARED ── */
+  section { padding: 80px 5vw; }
+  .section-eyebrow {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15; color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .section-sub { color: var(--muted); font-size: 1.05rem; line-height: 1.6; max-width: 560px; }
+
+  /* ── FEATURED PRODUCTS ── */
+  .products-header { text-align: center; margin-bottom: 48px; }
+  .products-header .section-sub { margin: 0 auto; }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .product-card {
+    background: var(--white); border-radius: var(--radius-lg);
+    overflow: hidden; cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 16px rgba(45,27,105,.06);
+    position: relative;
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(45,27,105,.14); }
+  .product-img {
+    height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4.5rem;
+    position: relative;
+  }
+  .product-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--pink); color: #fff;
+    font-weight: 700; font-size: .72rem; letter-spacing: .5px;
+    padding: 4px 10px; border-radius: 50px;
+  }
+  .product-body { padding: 20px; }
+  .product-body h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.1rem; color: var(--navy); margin-bottom: 6px;
+  }
+  .product-age {
+    font-size: .82rem; color: var(--muted);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 4px;
+  }
+  .product-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 8px;
+  }
+  .product-price {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.3rem; color: var(--navy);
+  }
+  .product-price del { font-size: .9rem; color: var(--muted); font-weight: 400; margin-right: 6px; }
+  .btn-add {
+    background: var(--navy); color: var(--yellow);
+    font-family: var(--font-display); font-weight: 700; font-size: .85rem;
+    padding: 8px 18px; border-radius: 50px; border: none; cursor: pointer;
+    transition: background .2s, transform .15s;
+  }
+  .btn-add:hover { background: var(--purple); transform: scale(1.05); }
+
+  /* ── CATEGORIES ── */
+  #categories { background: var(--navy); }
+  .categories-header { text-align: center; margin-bottom: 48px; }
+  .categories-header .section-title { color: var(--white); }
+  .categories-header .section-sub { color: #C9C0FF; margin: 0 auto; }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .cat-card {
+    border-radius: var(--radius-lg);
+    padding: 32px 20px;
+    text-align: center; cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    position: relative; overflow: hidden;
+  }
+  .cat-card:hover { transform: translateY(-6px); }
+  .cat-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: inherit; filter: brightness(1.1);
+    opacity: 0; transition: opacity .2s;
+  }
+  .cat-card:hover::before { opacity: 1; }
+  .cat-icon { font-size: 3.2rem; margin-bottom: 14px; display: block; }
+  .cat-card h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1rem; color: var(--white); line-height: 1.3;
+  }
+  .cat-1 { background: linear-gradient(135deg, #7C3AED, #5B21B6); }
+  .cat-2 { background: linear-gradient(135deg, #FF6B2B, #DC2626); }
+  .cat-3 { background: linear-gradient(135deg, #00B4A0, #0891B2); }
+  .cat-4 { background: linear-gradient(135deg, #FF4E8B, #DB2777); }
+  .cat-5 { background: linear-gradient(135deg, #F59E0B, #D97706); }
+  .cat-6 { background: linear-gradient(135deg, #10B981, #059669); }
+
+  /* ── PRODUCT DETAIL SECTION ── */
+  #product-detail { background: var(--gray); }
+  .product-detail-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+  }
+  .detail-img-main {
+    background: var(--white); border-radius: var(--radius-lg);
+    height: 380px; display: flex; align-items: center; justify-content: center;
+    font-size: 8rem;
+    box-shadow: 0 8px 32px rgba(45,27,105,.1);
+  }
+  .detail-thumbnails {
+    display: flex; gap: 12px; margin-top: 16px;
+  }
+  .thumb {
+    background: var(--white); border-radius: var(--radius);
+    width: 70px; height: 70px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; cursor: pointer;
+    border: 3px solid transparent; transition: border-color .2s;
+  }
+  .thumb.active, .thumb:hover { border-color: var(--orange); }
+  .detail-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .stars { color: var(--yellow); font-size: 1.1rem; letter-spacing: 2px; }
+  .detail-rating span { color: var(--muted); font-size: .9rem; }
+  .detail-price {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 2.2rem; color: var(--navy); margin-bottom: 4px;
+  }
+  .detail-price del { font-size: 1.2rem; color: var(--muted); font-weight: 400; }
+  .savings-tag {
+    display: inline-block; background: #DCFCE7; color: #166534;
+    font-weight: 700; font-size: .82rem;
+    padding: 4px 12px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .detail-desc { color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+  .detail-section-label {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: .85rem; color: var(--navy); text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .includes-list {
+    list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+  }
+  .includes-list li {
+    background: var(--white); border: 2px solid var(--gray);
+    padding: 6px 14px; border-radius: 50px;
+    font-size: .88rem; font-weight: 600; color: var(--text);
+  }
+  .detail-meta { display: flex; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+  .meta-item { font-size: .88rem; color: var(--muted); }
+  .meta-item strong { color: var(--navy); display: block; font-weight: 700; }
+  .detail-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-cart {
+    background: var(--orange); color: var(--white);
+    font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
+    padding: 16px 36px; border-radius: 50px; border: none; cursor: pointer;
+    flex: 1; min-width: 200px;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 6px 20px rgba(255,107,43,.35);
+  }
+  .btn-cart:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,107,43,.5); }
+  .btn-wishlist {
+    background: var(--white); color: var(--navy);
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+    padding: 16px 28px; border-radius: 50px;
+    border: 2px solid var(--gray); cursor: pointer;
+    transition: border-color .2s;
+  }
+  .btn-wishlist:hover { border-color: var(--pink); color: var(--pink); }
+
+  /* ── WHY US ── */
+  #why-us { background: var(--white); }
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center; margin-top: 40px;
+  }
+  .why-items { display: flex; flex-direction: column; gap: 28px; }
+  .why-item { display: flex; gap: 20px; align-items: flex-start; }
+  .why-icon {
+    width: 56px; height: 56px; border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0;
+  }
+  .why-item:nth-child(1) .why-icon { background: #FEF3C7; }
+  .why-item:nth-child(2) .why-icon { background: #EDE9FE; }
+  .why-item:nth-child(3) .why-icon { background: #CCFBF1; }
+  .why-item:nth-child(4) .why-icon { background: #FCE7F3; }
+  .why-item h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.05rem; margin-bottom: 6px; color: var(--navy);
+  }
+  .why-item p { font-size: .92rem; color: var(--muted); line-height: 1.6; }
+  .why-visual {
+    background: linear-gradient(135deg, var(--purple), var(--teal));
+    border-radius: var(--radius-lg);
+    padding: 48px; text-align: center;
+    box-shadow: 0 16px 48px rgba(124,58,237,.3);
+  }
+  .why-visual .big-emoji { font-size: 6rem; margin-bottom: 20px; display: block; }
+  .why-visual h3 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.5rem; color: var(--white); margin-bottom: 10px;
+  }
+  .why-visual p { color: rgba(255,255,255,.8); line-height: 1.6; }
+
+  /* ── REVIEWS ── */
+  #reviews { background: var(--cream); }
+  .reviews-header { text-align: center; margin-bottom: 48px; }
+  .reviews-header .section-sub { margin: 0 auto; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--white); border-radius: var(--radius-lg);
+    padding: 28px; box-shadow: 0 4px 16px rgba(45,27,105,.06);
+    transition: transform .2s;
+  }
+  .review-card:hover { transform: translateY(-4px); }
+  .review-stars { color: var(--yellow); font-size: 1rem; margin-bottom: 14px; }
+  .review-text { color: var(--text); line-height: 1.65; font-size: .95rem; margin-bottom: 20px; }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .reviewer-name { font-weight: 700; font-size: .92rem; color: var(--navy); }
+  .reviewer-meta { font-size: .8rem; color: var(--muted); }
+
+  /* ── ABOUT ── */
+  #about { background: var(--navy); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+  }
+  .about-text .section-title { color: var(--white); }
+  .about-text p { color: #C9C0FF; line-height: 1.75; margin-bottom: 20px; }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-top: 32px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius); padding: 20px;
+    text-align: center;
+  }
+  .stat-box .num {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 2rem; color: var(--yellow);
+  }
+  .stat-box .label { font-size: .85rem; color: #C9C0FF; margin-top: 4px; }
+  .about-visual {
+    background: linear-gradient(135deg, var(--orange), var(--pink));
+    border-radius: var(--radius-lg);
+    padding: 52px; text-align: center;
+    font-size: 7rem;
+    box-shadow: 0 16px 48px rgba(255,107,43,.25);
+    position: relative; overflow: hidden;
+  }
+  .about-visual::after {
+    content: '✏️🖌️🎨';
+    position: absolute; bottom: 12px; right: 16px;
+    font-size: 1.8rem; opacity: .5;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--gray); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+  }
+  .contact-info h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; margin-top: 24px;
+  }
+  .contact-info h3:first-child { margin-top: 0; }
+  .contact-info p { color: var(--muted); font-size: .95rem; line-height: 1.6; }
+  .contact-channels { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+  .channel-btn {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 20px; border-radius: var(--radius);
+    text-decoration: none; font-weight: 700; font-size: .95rem;
+    transition: transform .15s, box-shadow .15s;
+    border: none; cursor: pointer; width: 100%;
+  }
+  .channel-btn:hover { transform: translateX(4px); }
+  .channel-wa { background: #25D366; color: #fff; }
+  .channel-email { background: var(--navy); color: var(--yellow); }
+  .social-links { display: flex; gap: 12px; margin-top: 20px; }
+  .social-link {
+    width: 44px; height: 44px; border-radius: var(--radius);
+    background: var(--white); display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; text-decoration: none;
+    box-shadow: 0 2px 8px rgba(45,27,105,.1);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .social-link:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(45,27,105,.15); }
+  .contact-form { background: var(--white); border-radius: var(--radius-lg); padding: 36px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-weight: 700; font-size: .88rem;
+    color: var(--navy); margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%; padding: 12px 16px;
+    border: 2px solid var(--gray); border-radius: var(--radius);
+    font-family: var(--font-body); font-size: .95rem; color: var(--text);
+    background: var(--cream); transition: border-color .2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--purple); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .btn-submit {
+    width: 100%; background: var(--purple); color: var(--white);
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+    padding: 14px; border-radius: 50px; border: none; cursor: pointer;
+    transition: background .2s, transform .15s;
+    box-shadow: 0 6px 20px rgba(124,58,237,.35);
+  }
+  .btn-submit:hover { background: var(--navy); transform: translateY(-2px); }
+
+  /* ── PAYMENT ── */
+  .payment-section { background: var(--white); padding: 40px 5vw; text-align: center; }
+  .payment-section p { font-weight: 700; color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+  .payment-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .pay-badge {
+    background: var(--gray); border-radius: 10px;
+    padding: 10px 20px; font-weight: 700; font-size: .88rem;
+    color: var(--navy); display: flex; align-items: center; gap: 8px;
+  }
+
+  /* ── POLICIES ── */
+  .policies-bar {
+    background: var(--navy); padding: 24px 5vw;
+    display: flex; flex-wrap: wrap; gap: 12px;
+    justify-content: center;
+  }
+  .policy-link {
+    color: #C9C0FF; text-decoration: none;
+    font-size: .85rem; font-weight: 600;
+    transition: color .2s; padding: 4px 12px;
+    border-radius: 50px; border: 1px solid rgba(255,255,255,.12);
+  }
+  .policy-link:hover { color: var(--yellow); border-color: var(--yellow); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #100C30;
+    padding: 32px 5vw;
+    display: flex; flex-wrap: wrap; gap: 16px;
+    align-items: center; justify-content: space-between;
+  }
+  .footer-brand {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.2rem; color: var(--yellow);
+  }
+  .footer-brand span { color: var(--orange); }
+  footer p { color: rgba(201,192,255,.5); font-size: .82rem; }
+
+  /* ── MODAL (Policies) ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(10,6,40,.7); z-index: 200;
+    align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white); border-radius: var(--radius-lg);
+    max-width: 600px; width: 100%; max-height: 80vh;
+    overflow-y: auto; padding: 40px;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 20px;
+    background: none; border: none; font-size: 1.5rem;
+    cursor: pointer; color: var(--muted); transition: color .2s;
+  }
+  .modal-close:hover { color: var(--navy); }
+  .modal h2 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.6rem; color: var(--navy); margin-bottom: 16px;
+  }
+  .modal p, .modal li {
+    color: var(--muted); line-height: 1.7; font-size: .95rem; margin-bottom: 12px;
+  }
+  .modal ul { padding-left: 20px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; text-align: center; gap: 48px; }
+    .hero-sub { margin: 0 auto 36px; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { order: -1; }
+    .hero-stat-chips { position: static; transform: none; justify-content: center; margin-top: 20px; }
+    .hero-img-frame { width: 280px; height: 280px; }
+    .product-detail-grid { grid-template-columns: 1fr; }
+    .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5vw; }
+    .chip { font-size: .75rem; padding: 6px 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Aarush <span>Art Craft</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cart">🛒 Cart (0)</button>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="hero-text">
+    <div class="hero-badge">🎨 100% Safe for Kids</div>
+    <h1>Creative DIY Art &amp; Craft Kits for <em>Little Artists</em></h1>
+    <p class="hero-sub">Everything a child needs to imagine, build, and grow — in one beautifully packed kit. No mess, no fuss, all joy.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Explore All Kits →</a>
+      <a href="#about" class="btn-outline">Our Story</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img-frame">🎨</div>
+    <div class="hero-stat-chips">
+      <div class="chip">⭐ <span>4.9</span> Rating</div>
+      <div class="chip">🏠 <span>10,000+</span> Happy Kids</div>
+      <div class="chip">🚚 Free Shipping</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-scroll">
+    <span class="trust-item">🎉 Free shipping on orders above ₹499</span>
+    <span class="trust-item">🔒 100% safe, non-toxic materials</span>
+    <span class="trust-item">🚀 Same-day dispatch</span>
+    <span class="trust-item">💯 Easy returns within 7 days</span>
+    <span class="trust-item">🎁 Gift wrapping available</span>
+    <span class="trust-item">🏆 10,000+ happy families across India</span>
+    <!-- duplicate for seamless loop -->
+    <span class="trust-item">🎉 Free shipping on orders above ₹499</span>
+    <span class="trust-item">🔒 100% safe, non-toxic materials</span>
+    <span class="trust-item">🚀 Same-day dispatch</span>
+    <span class="trust-item">💯 Easy returns within 7 days</span>
+    <span class="trust-item">🎁 Gift wrapping available</span>
+    <span class="trust-item">🏆 10,000+ happy families across India</span>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <div class="section-eyebrow">Bestsellers</div>
+    <h2 class="section-title">Kids Can't Put These Down</h2>
+    <p class="section-sub">Each kit is carefully designed to spark creativity, build confidence, and deliver a wow-worthy result.</p>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card" onclick="openProductModal()">
+      <div class="product-img" style="background: linear-gradient(135deg,#EDE9FE,#DDD6FE);">
+        <div class="product-badge">Bestseller</div>
+        🏯
+      </div>
+      <div class="product-body">
+        <h3>MDF Taj Mahal Colouring Kit</h3>
+        <div class="product-age">👶 Ages 6–14 · DIY MDF Kit</div>
+        <div class="product-footer">
+          <div class="product-price"><del>₹599</del> ₹399</div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openProductModal()">
+      <div class="product-img" style="background: linear-gradient(135deg,#CCFBF1,#A7F3D0);">
+        <div class="product-badge">New</div>
+        🐘
+      </div>
+      <div class="product-body">
+        <h3>POP Elephant Painting Kit</h3>
+        <div class="product-age">👶 Ages 5–12 · POP Painting</div>
+        <div class="product-footer">
+          <div class="product-price"><del>₹499</del> ₹329</div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openProductModal()">
+      <div class="product-img" style="background: linear-gradient(135deg,#FEF3C7,#FDE68A);">
+        🌱
+      </div>
+      <div class="product-body">
+        <h3>Terrarium Science Kit</h3>
+        <div class="product-age">👶 Ages 8–15 · Science Kit</div>
+        <div class="product-footer">
+          <div class="product-price"><del>₹799</del> ₹549</div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openProductModal()">
+      <div class="product-img" style="background: linear-gradient(135deg,#FCE7F3,#FBCFE8);">
+        <div class="product-badge">Hot 🔥</div>
+        🪔
+      </div>
+      <div class="product-body">
+        <h3>Diwali Diya Decoration Kit</h3>
+        <div class="product-age">👶 Ages 4–12 · Festival Kit</div>
+        <div class="product-footer">
+          <div class="product-price">₹299</div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openProductModal()">
+      <div class="product-img" style="background: linear-gradient(135deg,#DBEAFE,#BFDBFE);">
+        🧩
+      </div>
+      <div class="product-body">
+        <h3>Wooden Animal Puzzle Kit</h3>
+        <div class="product-age">👶 Ages 3–8 · Wooden Craft</div>
+        <div class="product-footer">
+          <div class="product-price"><del>₹449</del> ₹299</div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openProductModal()">
+      <div class="product-img" style="background: linear-gradient(135deg,#F0FDF4,#BBF7D0);">
+        📚
+      </div>
+      <div class="product-body">
+        <h3>Alphabet Activity Workbook Kit</h3>
+        <div class="product-age">👶 Ages 3–7 · Educational</div>
+        <div class="product-footer">
+          <div class="product-price">₹249</div>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="categories-header">
+    <div class="section-eyebrow" style="color:#FFD932">Browse by Category</div>
+    <h2 class="section-title">Find the Perfect Kit</h2>
+    <p class="section-sub">Six distinct lines, each designed around a different way kids love to create.</p>
+  </div>
+  <div class="categories-grid">
+    <div class="cat-card cat-1"><span class="cat-icon">🏯</span><h3>DIY MDF Colouring Kits</h3></div>
+    <div class="cat-card cat-2"><span class="cat-icon">🎨</span><h3>POP Painting Kits</h3></div>
+    <div class="cat-card cat-3"><span class="cat-icon">🪵</span><h3>Wooden Craft Kits</h3></div>
+    <div class="cat-card cat-4"><span class="cat-icon">🔬</span><h3>Science Project Kits</h3></div>
+    <div class="cat-card cat-5"><span class="cat-icon">📖</span><h3>Educational Activity Kits</h3></div>
+    <div class="cat-card cat-6"><span class="cat-icon">🪔</span><h3>Festival Craft Kits</h3></div>
+  </div>
+</section>
+
+<!-- PRODUCT DETAIL -->
+<section id="product-detail">
+  <div class="section-eyebrow">Product Spotlight</div>
+  <h2 class="section-title" style="margin-bottom:40px">MDF Taj Mahal Colouring Kit</h2>
+  <div class="product-detail-grid">
+    <div>
+      <div class="detail-img-main">🏯</div>
+      <div class="detail-thumbnails">
+        <div class="thumb active">🏯</div>
+        <div class="thumb">🎨</div>
+        <div class="thumb">📦</div>
+        <div class="thumb">✅</div>
+      </div>
+    </div>
+    <div>
+      <div class="detail-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 · 284 reviews</span>
+      </div>
+      <div class="detail-price"><del>₹599</del> ₹399</div>
+      <span class="savings-tag">🎉 Save ₹200 (33% off)</span>
+      <p class="detail-desc">A pre-cut MDF replica of the iconic Taj Mahal — ready to colour, paint, and display. A perfect weekend activity that builds focus, patience, and pride in every child.</p>
+
+      <div class="detail-section-label">What's Included</div>
+      <ul class="includes-list">
+        <li>🏯 Pre-cut MDF base</li>
+        <li>🎨 6 acrylic paints</li>
+        <li>🖌️ 2 paint brushes</li>
+        <li>✏️ Outline guide sheet</li>
+        <li>📋 Step-by-step instructions</li>
+        <li>🧤 Protective gloves</li>
+      </ul>
+
+      <div class="detail-meta">
+        <div class="meta-item"><strong>👶 Age Group</strong>6 – 14 years</div>
+        <div class="meta-item"><strong>⏱️ Time</strong>~2 hours</div>
+        <div class="meta-item"><strong>🚚 Shipping</strong>3–5 business days</div>
+        <div class="meta-item"><strong>📦 Weight</strong>350 g</div>
+      </div>
+
+      <div class="detail-actions">
+        <button class="btn-cart">🛒 Add to Cart</button>
+        <button class="btn-wishlist">♡ Wishlist</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section id="why-us">
+  <div class="section-eyebrow">Why Aarush Art Craft</div>
+  <h2 class="section-title">Made with Intention,<br>Loved by Families</h2>
+  <div class="why-grid">
+    <div class="why-items">
+      <div class="why-item">
+        <div class="why-icon">🎯</div>
+        <div>
+          <h3>Age-Appropriate Design</h3>
+          <p>Every kit is developed with child psychologists to match developmental stages — not too easy, not too hard.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🌿</div>
+        <div>
+          <h3>Non-Toxic, Safe Materials</h3>
+          <p>All paints, adhesives, and materials are certified non-toxic and tested for child safety — peace of mind guaranteed.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📦</div>
+        <div>
+          <h3>Everything Included</h3>
+          <p>No last-minute runs to the store. Every kit arrives complete — open, create, display.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">💝</div>
+        <div>
+          <h3>Learning Through Play</h3>
+          <p>Each kit quietly teaches fine motor skills, colour theory, patience, and creative thinking alongside the fun.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <span class="big-emoji">🌟</span>
+      <h3>"Every child is an artist — we just hand them the tools."</h3>
+      <p>Our kits are designed so that when the last brushstroke is done, the child holds up their creation with pride.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-header">
+    <div class="section-eyebrow">Customer Love</div>
+    <h2 class="section-title">What Parents Are Saying</h2>
+    <p class="section-sub">Real families, real results — and a lot of very proud little artists.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"My 8-year-old refused to put the Taj Mahal kit down until it was finished. The instructions are crystal clear and the quality of the MDF is wonderful!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#EDE9FE;">👩</div>
+        <div>
+          <div class="reviewer-name">Priya Sharma</div>
+          <div class="reviewer-meta">Mom of 2 · Delhi · MDF Kit</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Ordered the Science Terrarium kit for my daughter's birthday — she was absolutely mesmerised. Ships fast and everything was neatly packed. Will buy again!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#CCFBF1;">👨</div>
+        <div>
+          <div class="reviewer-name">Rahul Mehta</div>
+          <div class="reviewer-meta">Dad · Mumbai · Science Kit</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The Diwali kit was a big hit with our whole family! Kids painted diyas together, and the non-toxic paints made me feel completely at ease. Gifting more this Diwali!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#FCE7F3;">👩</div>
+        <div>
+          <div class="reviewer-name">Ananya Iyer</div>
+          <div class="reviewer-meta">Mom · Bangalore · Festival Kit</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"Great value for the price! The wooden puzzle kit kept my 5-year-old busy for two whole afternoons. Delivery was faster than expected."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#FEF3C7;">👨</div>
+        <div>
+          <div class="reviewer-name">Suresh Nair</div>
+          <div class="reviewer-meta">Dad · Pune · Wooden Craft</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The activity workbook kit has made learning alphabets so much more engaging for my preschooler. She asks for 'craft time' every evening now!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#DBEAFE;">👩</div>
+        <div>
+          <div class="reviewer-name">Meera Krishnan</div>
+          <div class="reviewer-meta">Mom · Chennai · Educational Kit</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Perfect gift for my nephew's birthday! The POP painting kit looked so professional when finished — he wants to frame it. Brilliant product."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#F0FDF4;">👩</div>
+        <div>
+          <div class="reviewer-name">Divya Kapoor</div>
+          <div class="reviewer-meta">Aunt · Hyderabad · POP Kit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-eyebrow" style="color:#FFD932">Our Story</div>
+      <h2 class="section-title">Making Learning Fun, One Kit at a Time</h2>
+      <p>Aarush Art Craft was born from a simple belief: every child has a creative spark, and the right tools can turn that spark into a lifelong love of making things.</p>
+      <p>We design each kit so that when the last brushstroke is done and the last piece snaps into place, the child holds up their creation with pride — and a parent shares that smile too.</p>
+      <p>From our workshop to your home, every kit is packed with care, tested for safety, and designed to make those weekend afternoons truly memorable.</p>
+      <div class="about-stats">
+        <div class="stat-box"><div class="num">10K+</div><div class="label">Happy Families</div></div>
+        <div class="stat-box"><div class="num">50+</div><div class="label">Unique Kits</div></div>
+        <div class="stat-box"><div class="num">4.9★</div><div class="label">Avg. Rating</div></div>
+        <div class="stat-box"><div class="num">6</div><div class="label">Kit Categories</div></div>
+      </div>
+    </div>
+    <div class="about-visual">🎨</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">Get in Touch</div>
+  <h2 class="section-title" style="margin-bottom:40px">We'd Love to Hear From You</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>📍 Where We Are</h3>
+      <p>India · Orders shipped pan-India with tracking</p>
+      <h3>🕘 Support Hours</h3>
+      <p>Mon–Sat, 9 AM – 7 PM IST<br>We typically reply within 2 hours.</p>
+      <div class="contact-channels">
+        <a href="https://wa.me/919566087705" class="channel-btn channel-wa" target="_blank">
+          <span style="font-size:1.3rem">💬</span> Chat on WhatsApp
+        </a>
+        <a href="mailto:hello@aarushartcraft.in" class="channel-btn channel-email">
+          <span style="font-size:1.2rem">✉️</span> hello@aarushartcraft.in
+        </a>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">📸</a>
+        <a href="#" class="social-link" title="Facebook">👥</a>
+        <a href="#" class="social-link" title="YouTube">▶️</a>
+        <a href="#" class="social-link" title="Pinterest">📌</a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="e.g. Priya Sharma">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="priya@example.com">
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <select>
+          <option>Order enquiry</option>
+          <option>Product question</option>
+          <option>Return / Refund</option>
+          <option>Bulk / School orders</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us how we can help…"></textarea>
+      </div>
+      <button class="btn-submit" onclick="handleFormSubmit()">Send Message ✉️</button>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT METHODS -->
+<div class="payment-section">
+  <p>🔒 Secure Checkout — We Accept</p>
+  <div class="payment-icons">
+    <div class="pay-badge">📱 UPI</div>
+    <div class="pay-badge">💳 Credit Card</div>
+    <div class="pay-badge">🏦 Debit Card</div>
+    <div class="pay-badge">🌐 Net Banking</div>
+    <div class="pay-badge">👜 Paytm Wallet</div>
+    <div class="pay-badge">💰 PhonePe</div>
+    <div class="pay-badge">🟢 GPay</div>
+  </div>
+</div>
+
+<!-- POLICIES BAR -->
+<div class="policies-bar">
+  <a href="#" class="policy-link" onclick="openPolicy('shipping')">🚚 Shipping Policy</a>
+  <a href="#" class="policy-link" onclick="openPolicy('returns')">↩️ Return & Refund</a>
+  <a href="#" class="policy-link" onclick="openPolicy('privacy')">🔒 Privacy Policy</a>
+  <a href="#" class="policy-link" onclick="openPolicy('terms')">📄 Terms & Conditions</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Aarush <span>Art Craft</span></div>
+  <p>© 2024 Aarush Art Craft · Made with ❤️ for little creators</p>
+</footer>
+
+<!-- POLICY MODAL -->
+<div class="modal-overlay" id="policyModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2 id="modalTitle"></h2>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+  /* ── Cart ── */
+  let cartItems = [];
+
+  function getProductInfo(btn) {
+    const card = btn.closest('.product-card') || btn.closest('#product-detail');
+    let name = '', price = 0;
+    if (card) {
+      const h3 = card.querySelector('h3');
+      const priceEl = card.querySelector('.product-price, .detail-price');
+      name = h3 ? h3.textContent.trim() : 'Product';
+      if (priceEl) {
+        const match = priceEl.textContent.replace(/[^\d\s]/g, ' ').trim().split(/\s+/).filter(Boolean);
+        price = parseInt(match[match.length - 1]) || 0;
+      }
+    }
+    return { name, price };
+  }
+
+  function updateCartButton() {
+    const total = cartItems.reduce((s, i) => s + i.qty, 0);
+    document.querySelector('.nav-cart').textContent = `🛒 Cart (${total})`;
+  }
+
+  document.querySelectorAll('.btn-add, .btn-cart').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const { name, price } = getProductInfo(btn);
+      const existing = cartItems.find(i => i.name === name);
+      if (existing) existing.qty++;
+      else cartItems.push({ name, price, qty: 1 });
+      updateCartButton();
+      const orig = btn.textContent;
+      btn.textContent = '✅ Added!';
+      setTimeout(() => btn.textContent = orig, 1200);
+    });
+  });
+
+  document.querySelector('.nav-cart').addEventListener('click', () => {
+    if (cartItems.length === 0) { alert('Your cart is empty! Add some products first.'); return; }
+    const total = cartItems.reduce((s, i) => s + i.price * i.qty, 0);
+    const itemsHTML = cartItems.map(i => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #F3F0E8">
+        <div>
+          <div style="font-weight:700;color:#1A1240">${i.name}</div>
+          <div style="font-size:.85rem;color:#6B5E8A">₹${i.price} × ${i.qty}</div>
+        </div>
+        <div style="font-weight:800;color:#1A1240;font-size:1.1rem">₹${i.price * i.qty}</div>
+      </div>`).join('');
+    const waMsg = encodeURIComponent(
+      'Hello Aarush Art Craft! 🎨\n\nI would like to order:\n' +
+      cartItems.map(i => `• ${i.name} × ${i.qty} = ₹${i.price * i.qty}`).join('\n') +
+      `\n\nTotal: ₹${total}\n\nPlease confirm availability and share payment details. Thank you!`
+    );
+    const existing = document.getElementById('cart-modal');
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML('beforeend', `
+      <div id="cart-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,18,64,.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px">
+        <div style="background:#fff;border-radius:24px;padding:28px;width:100%;max-width:420px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,.25)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+            <h2 style="font-family:'Baloo 2',cursive;font-size:1.4rem;color:#1A1240">🛒 Your Cart</h2>
+            <button onclick="document.getElementById('cart-modal').remove()" style="background:#F3F0E8;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:1rem">✕</button>
+          </div>
+          ${itemsHTML}
+          <div style="display:flex;justify-content:space-between;font-weight:800;font-size:1.15rem;padding:16px 0;color:#1A1240">
+            <span>Total</span><span>₹${total}</span>
+          </div>
+          <a href="https://wa.me/919566087705?text=${waMsg}" target="_blank"
+            style="display:block;background:#25D366;color:#fff;text-align:center;padding:16px;border-radius:50px;text-decoration:none;font-weight:800;font-size:1.05rem;font-family:'Baloo 2',cursive;margin-top:8px;box-shadow:0 6px 20px rgba(37,211,102,.35)">
+            📲 Order on WhatsApp
+          </a>
+          <button onclick="document.getElementById('cart-modal').remove()"
+            style="display:block;width:100%;padding:14px;margin-top:10px;border:2px solid #F3F0E8;border-radius:50px;background:#fff;cursor:pointer;font-weight:700;font-family:'Baloo 2',cursive;color:#6B5E8A">
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+    `);
+  });
+
+  /* ── Thumbnails ── */
+  document.querySelectorAll('.thumb').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+    });
+  });
+
+  /* ── Product modal (simple demo) ── */
+  function openProductModal() { /* handled via #product-detail */ window.location.hash='product-detail'; }
+
+  /* ── Hamburger ── */
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') { links.style.display = ''; }
+    else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:#1A1240;padding:20px 5vw;gap:1rem;z-index:99;';
+    }
+  }
+
+  /* ── Policy modal ── */
+  const policies = {
+    shipping: {
+      title: '🚚 Shipping Policy',
+      content: `<p>We ship pan-India via trusted courier partners.</p>
+        <ul><li>Standard delivery: 3–5 business days</li><li>Express delivery: 1–2 business days (select cities)</li><li>Free shipping on orders above ₹499</li><li>All orders are dispatched within 24 hours of placement</li><li>A tracking link is shared via email and WhatsApp once dispatched</li></ul>`
+    },
+    returns: {
+      title: '↩️ Return & Refund Policy',
+      content: `<p>We want you to love your kit. If something's not right:</p>
+        <ul><li>Returns accepted within 7 days of delivery for damaged or incorrect items</li><li>Items must be unused and in original packaging</li><li>Raise a return request via WhatsApp or email with a photo</li><li>Refunds processed within 5–7 business days after pick-up</li><li>No questions asked for manufacturing defects</li></ul>`
+    },
+    privacy: {
+      title: '🔒 Privacy Policy',
+      content: `<p>We respect your privacy and are committed to protecting your data.</p>
+        <ul><li>We collect only information necessary to fulfil your order (name, address, email, phone)</li><li>Your data is never sold to third parties</li><li>Payment processing is handled by secure, PCI-DSS compliant gateways</li><li>We use cookies to improve your browsing experience</li><li>You may request deletion of your data at any time by emailing us</li></ul>`
+    },
+    terms: {
+      title: '📄 Terms & Conditions',
+      content: `<p>By using our website and placing an order, you agree to:</p>
+        <ul><li>Provide accurate shipping and contact information</li><li>Not reproduce or resell our products or designs commercially</li><li>Our kits are intended for personal, non-commercial use</li><li>Aarush Art Craft reserves the right to cancel orders at our discretion</li><li>Prices are subject to change without notice</li><li>All disputes subject to the jurisdiction of Indian courts</li></ul>`
+    }
+  };
+
+  function openPolicy(key) {
+    const p = policies[key];
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalContent').innerHTML = p.content;
+    document.getElementById('policyModal').classList.add('open');
+    event.preventDefault();
+  }
+  function closeModal() { document.getElementById('policyModal').classList.remove('open'); }
+  document.getElementById('policyModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeModal(); });
+
+  /* ── Form submit ── */
+  function handleFormSubmit() {
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = '✅ Message Sent! We\'ll reply within 2 hours.';
+    btn.style.background = '#10B981';
+    setTimeout(() => { btn.textContent = 'Send Message ✉️'; btn.style.background = ''; }, 4000);
+  }
+</script>
+</body>
+</html>
