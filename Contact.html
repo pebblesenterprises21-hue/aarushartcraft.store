@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Aarush Art &amp; Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="brand">Aarush <span>Art &amp; Craft</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Shop</a><a href="products.html#categories">Categories</a><a href="contact.html" class="active">Contact</a></div>
+    <div class="nav-actions">
+      <a href="wishlist.html" class="icon-btn"><i class="fa-regular fa-heart"></i><span class="badge" data-wish-count style="display:none">0</span></a>
+      <a href="cart.html" class="icon-btn"><i class="fa-solid fa-bag-shopping"></i><span class="badge" data-cart-count style="display:none">0</span></a>
+      <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div></nav>
+  <div class="container breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></div>
+  <section style="padding:32px 0 60px"><div class="container">
+    <div style="margin-bottom:50px;max-width:640px">
+      <h1>Say hello</h1>
+      <p style="color:var(--ink-soft);margin-top:14px;font-size:1.05rem">Have a custom request, bulk order or just want to chat? We reply within a day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-row"><div class="ic"><i class="fa-brands fa-whatsapp"></i></div><div><h4>WhatsApp</h4><p><a href="https://wa.me/919566087705" target="_blank">+91 95660 87705</a></p></div></div>
+        <div class="contact-row"><div class="ic"><i class="fa-solid fa-envelope"></i></div><div><h4>Email</h4><p><a href="mailto:pebblesenterprises21@gmail.com">pebblesenterprises21@gmail.com</a></p></div></div>
+        <div class="contact-row"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><h4>Phone</h4><p><a href="tel:+919566087705">+91 95660 87705</a></p></div></div>
+        <div class="contact-row"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><h4>Studio</h4><p>Chennai, Tamil Nadu, India</p></div></div>
+        <div class="contact-row"><div class="ic"><i class="fa-solid fa-clock"></i></div><div><h4>Hours</h4><p>Mon — Sat · 10am to 7pm IST</p></div></div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <h3 style="margin-bottom:18px">Send us a message</h3>
+        <label for="name">Your name</label><input id="name" name="name" type="text" required>
+        <label for="email">Email address</label><input id="email" name="email" type="email" required>
+        <label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell us what you have in mind…" required></textarea>
+        <button type="submit" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
+      </form>
+    </div>
+  </div></section>
+  <div id="footer-slot"></div>
+  <script src="js/data.js"></script><script src="js/app.js"></script>
+</body></html>
