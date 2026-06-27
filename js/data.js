@@ -9,12 +9,12 @@ const CATEGORIES = [
 const SHOP_PRODUCTS = [
   {
     id: 1,
-    name: "Hand-Painted Ganesha Figurine — Purple",
-    price: 349,
+    name: "Hand-Painted Ganesha Figurine",
+    price: 150,
     category: "divine",
-    image: "images/ganesha-purple.jpg",   // ← REPLACE with your GitHub Pages image path
+    image: "image/ganesha-figurines.png",   // ← REPLACE with your GitHub Pages image path
     gallery: [],
-    description: "Lavender Ganesha hand-painted on terracotta.",
+    description: " Ganesha hand-painted on POP and pasted on MDF, coated for glossy look.",
     details: "A serene Ganesha figurine sculpted and hand-painted in soft lavender with a pink crown. Each piece is one-of-a-kind.",
     stock: "In Stock",
     featured: true,
