@@ -69,8 +69,8 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 6,
-    name: "Lotus Ganesha Wall Plate",
-    price: 399,
+    name: "Lotus ganesha fridge magnet",
+    price: 99,
     category: "hand-painted",
     image: "images/lotus-ganesha-plate.jpg",
     gallery: [],
