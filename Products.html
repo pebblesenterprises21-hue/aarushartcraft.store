@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Aarush Art &amp; Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Aarush <span>Art &amp; Craft</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="wishlist.html" class="icon-btn"><i class="fa-regular fa-heart"></i><span class="badge" data-wish-count style="display:none">0</span></a>
+        <a href="cart.html" class="icon-btn"><i class="fa-solid fa-bag-shopping"></i><span class="badge" data-cart-count style="display:none">0</span></a>
+        <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Shop</span></div>
+
+  <section style="padding:32px 0 60px">
+    <div class="container">
+      <div style="margin-bottom:36px">
+        <h1 style="margin-bottom:8px">The whole collection</h1>
+        <p style="color:var(--ink-soft)">Search, filter, find the one that's yours.</p>
+      </div>
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search-input" placeholder="Search painting kits, idols, gifts…">
+      </div>
+      <div id="categories" style="margin-bottom:40px">
+        <h2 style="font-size:1.3rem;margin-bottom:20px">Categories</h2>
+        <div class="cat-grid" id="cat-grid-products"></div>
+      </div>
+      <div class="filter-bar" id="filter-bar"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <span id="result-count" style="color:var(--ink-soft);font-size:0.9rem">—</span>
+      </div>
+      <div class="product-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <div id="footer-slot"></div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
