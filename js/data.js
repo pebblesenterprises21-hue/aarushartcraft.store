@@ -72,7 +72,7 @@ const SHOP_PRODUCTS = [
     name: "Lotus ganesha fridge magnet",
     price: 99,
     category: "hand-painted",
-    image: "image/Lotus Ganesha Fridge Magnet.png",
+    image: "image/lotus-Ganesha Fridge Magnet.png",
     gallery: [],
     description: "Pocket-sized hand-painted Ganesha on a lotus plate.",
     details: "Tiny circular wall plate hand-painted with a Ganesha on a pink lotus mandala. Hang anywhere — entrance, pooja room, desk.",
