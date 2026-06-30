@@ -33,7 +33,6 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 3,
-    id: 3,
     name: "Aarush Painting Kit — Farm Friends",
     price: 99,
     category: "painting-kits",
