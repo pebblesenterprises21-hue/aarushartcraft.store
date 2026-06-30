@@ -147,6 +147,23 @@ h3 { font-size: 1.25rem; }
   cursor: pointer;
   color: var(--ink);
 }
+.google-search {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.google-card {
+  max-width: 420px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.google-card img {
+  width: 100%;
+  display: block;
+}
 
 /* ---------- BUTTONS ---------- */
 .btn {
