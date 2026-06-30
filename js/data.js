@@ -46,7 +46,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 4,
-    name: "Tricolour Wooden Ganesha Set (Pack of 3)",
+    name: "Space theme - painting kit",
     id: 4,
     name: "Space - theme painting Kit",
     price: 99,
@@ -63,7 +63,7 @@ const SHOP_PRODUCTS = [
     name: "Little Monk on Lotus — Acrylic Painting",
     price: 99,
     category: "Handpainted",
-    image: "images/littlemonk.png",
+    image: "image/littlemonk.png",
     gallery: [],
     description: "Original acrylic painting on canvas board.",
     details: "A peaceful monk meditating on a pink lotus.. Hand-painted in acrylic. Fridge magnet, coated with glossy finish.Size - 2inch.",
