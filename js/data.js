@@ -21,7 +21,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 2,
-    name: "Unicorn Magic — DIY Painting Set",
+    name: "image/Unicorn Magic — DIY Painting Set",
     price: 99,
     category: "painting-kits",
     image: "Unicorn theme painting kit.png",
