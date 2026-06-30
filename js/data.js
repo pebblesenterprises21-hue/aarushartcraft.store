@@ -24,7 +24,7 @@ const SHOP_PRODUCTS = [
     name: "Unicorn Magic — DIY Painting Set",
     price: 99,
     category: "painting-kits",
-    image: "image/unicorn-theme painting kit.png",
+    image: "images/unicorn-theme painting kit.png",
     gallery: [],
     description: "6-piece unicorn & fairytale figures to paint.",
     details: "Six unpainted plaster figures — unicorn, mermaid tail, star, princess and more. Pop them out, paint and display.",
