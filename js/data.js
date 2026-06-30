@@ -70,7 +70,7 @@ const SHOP_PRODUCTS = [
   {
     id: 6,
     name: "Lotus ganesha fridge magnet",
-    price: 99,
+    price: 89,
     category: "hand-painted",
     image: "image/lotus -Ganesha Fridge Magnet.png",
     gallery: [],
