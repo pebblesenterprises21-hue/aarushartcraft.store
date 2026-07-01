@@ -176,25 +176,21 @@ function renderProducts() {
 }
 
 function initProductsPage() {
-
-
   const cat = getQuery("cat");
   const q = getQuery("q");
 
   if (cat) currentCat = cat;
+
   if (q) {
     currentQuery = q;
-    const search = $("#search-input");
+    const search = document.getElementById("search-input");
     if (search) search.value = q;
   }
 
-  const chipBar = $("#filter-bar");
+  const chipBar = document.getElementById("filter-bar");
 
   chipBar.innerHTML = `
-    <button class="chip ${currentCat === "all" ? "active" : ""}" data-cat="all">
-      All
-    </button>
-
+    <button class="chip ${currentCat === "all" ? "active" : ""}" data-cat="all">All</button>
     ${CATEGORIES.map(c => `
       <button class="chip ${currentCat === c.id ? "active" : ""}" data-cat="${c.id}">
         ${c.name}
@@ -202,42 +198,35 @@ function initProductsPage() {
     `).join("")}
   `;
 
-  chipBar.addEventListener("click", e => {
-
+  chipBar.addEventListener("click", function (e) {
     const btn = e.target.closest(".chip");
     if (!btn) return;
 
     currentCat = btn.dataset.cat;
 
-    $$(".chip").forEach(chip => chip.classList.remove("active"));
-
+    document.querySelectorAll(".chip").forEach(chip => chip.classList.remove("active"));
     btn.classList.add("active");
 
     renderProducts();
-
   });
 
-   const searchInput = document.getElementById("search-input");
+  const searchInput = document.getElementById("search-input");
 
-if (searchInput) {
-  searchInput.addEventListener("input", function () {
-    currentQuery = this.value.trim().toLowerCase();
-    renderProducts();
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      currentQuery = this.value.trim().toLowerCase();
+      renderProducts();
+    });
   }
-  });
 
   renderProducts();
 
   if (window.location.hash === "#products-grid") {
-
-      document.getElementById("products-grid").scrollIntoView({
-
-          behavior: "smooth"
-
-                          } });
-
-  
-
+    document.getElementById("products-grid").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+}
 }
 
 /* ---------- RENDER: PRODUCT DETAIL ---------- */
