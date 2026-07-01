@@ -576,6 +576,286 @@ wrap.innerHTML =   <div class="cart-layout">   <div class="cart-items">   ${item
 <div class="cart-item" data-testid="cart-item-${p.id}">
 <img src="${p.image}" alt="${p.name}">
 <div>
+<div class="cat">${cat ? cat.name : ""}</dip(productCardHTML).join("") ||
+          SHOP_PRODUCTS.filter(x => x.id !== p.id).slice(0, 4).map(productCardHTML).join("")}
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- RENDER: CART ---------- */
+function renderCart() {
+  const wrap = $("#cart-wrap");
+  if (!wrap) return;
+  const cart = getCart();
+  if (cart.length === 0) {
+    wrap.innerHTML = `<div class="list-empty" data-testid="cart-empty">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't picked anything yet.</p>
+      <a href="products.html" class="btn btn-primary">Start shopping</a>
+    </div>`;
+    return;
+  }
+  const items = cart.map(c => ({ ...findProduct(c.id), qty: c.qty })).filter(p => p.id);
+  const subtotal = items.reduce((s, p) => s + p.price * p.qty, 0);
+  const shipping = subtotal >= 999 ? 0 : 49;
+  const total = subtotal + shipping;
+
+  wrap.innerHTML = `
+    <div class="cart-layout">
+      <div class="cart-items">
+        ${items.map(p => {
+          const cat = CATEGORIES.find(c => c.id === p.category);
+          return `
+            <div class="cart-item" data-testid="cart-item-${p.id}">
+              <img src="${p.image}" alt="${p.name}">
+              <div>
+                <div class="cat">${cat ? cat.name : ""}</div>
+                <h4>${p.name}</h4>
+                <div class="qty-control" data-testid="qty-control-${p.id}">
+                  <button onclick="updateQty(${p.id}, -1)" aria-label="Decrease">−</button>
+                  <span>${p.qty}</span>
+                  <button onclick="updateQty(${p.id}, 1)" aria-label="Increase">+</button>
+                </div>
+              </div>
+              <div class="cart-item-right">
+                <div class="cart-item-price">${fmt(p.price * p.qty)}</div>
+                <button class="remove-btn" onclick="removeFromCart(${p.id})" data-testid="remove-${p.id}">Remove</button>
+              </div>
+            </div>`;
+        }).join("")}
+      </div>
+
+      <aside class="cart-summary" data-testid="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="sum-row"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
+        <div class="sum-row"><span>Shipping</span><span>${shipping === 0 ? "Free" : fmt(shipping)}</span></div>
+        <div class="sum-row total"><span>Total</span><span>${fmt(total)}</span></div>
+
+        <div class="checkout-actions">
+          <a class="btn btn-whatsapp" href="${waLinkCart(items, total)}" target="_blank" rel="noopener" data-testid="checkout-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+          </a>
+          <button class="btn btn-upi" onclick="openUPI(${total})" data-testid="checkout-upi">
+            <i class="fa-solid fa-indian-rupee-sign"></i> Pay ${fmt(total)} via UPI
+          </button>
+        </div>
+        <p class="payment-note">After UPI payment, please share the screenshot on WhatsApp to confirm your order.</p>
+      </aside>
+    </div>
+  `;
+}
+
+/* ---------- RENDER: WISHLIST ---------- */
+function renderWishlist() {
+  const wrap = $("#wish-wrap");
+  if (!wrap) return;
+  const ids = getWish();
+  if (ids.length === 0) {
+    wrap.innerHTML = `<div class="list-empty" data-testid="wish-empty">
+      <i class="fa-regular fa-heart"></i>
+      <h3>No favourites yet</h3>
+      <p>Tap the heart on any product to save it for later.</p>
+      <a href="products.html" class="btn btn-primary">Browse products</a>
+    </div>`;
+    return;
+  }
+  const items = ids.map(findProduct).filter(Boolean);
+  wrap.innerHTML = `<div class="product-grid">${items.map(productCardHTML).join("")}</div>`;
+}
+
+/* ---------- WHATSAPP LINKS ---------- */function waLinkSingle(p) {
+    const msg =
+`Hi Aarush Art & Craft!
+
+I would like to order:
+
+${p.name}
+
+Price : ${fmt(p.price)}
+
+Please confirm availability.`;
+
+    return `https://wa.me/${SHOP_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+function waLinkCart(items, total) {
+
+    const products = items.map((p, i) =>
+        `${i + 1}. ${p.name}
+Qty : ${p.qty}
+Price : ${fmt(p.price)}
+Subtotal : ${fmt(p.price * p.qty)}`
+    ).join("\n\n");
+
+    const msg =
+`Hi Aarush Art & Craft!
+
+I would like to place an order.
+
+${products}
+
+------------------------
+Grand Total : ${fmt(total)}
+
+Customer Name :
+Phone Number :
+Delivery Address :
+
+Please confirm my order.`;
+
+    return `https://wa.me/${SHOP_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+ 
+
+/* ---------- UPI MODAL ---------- */
+function openUPI(amount) {
+  let modal = $("#upi-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.className = "modal-bg";
+    modal.id = "upi-modal";
+    document.body.appendChild(modal);
+  }
+  const upiUrl = `upi://pay?pa=${SHOP_CONFIG.upiId}&pn=${encodeURIComponent(SHOP_CONFIG.payeeName)}&am=${amount}&cu=INR&tn=Order`;
+  const qrSrc  = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(upiUrl)}`;
+  modal.innerHTML = `
+    <div class="modal" data-testid="upi-modal">
+      <button class="modal-close" onclick="closeUPI()" data-testid="upi-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3>Pay via UPI</h3>
+      <p>Scan the QR with any UPI app or use the ID below</p>
+      <div class="qr-box"><img src="${qrSrc}" alt="UPI QR Code"></div>
+      <div class="upi-id-box">
+        <span id="upi-id-text">${SHOP_CONFIG.upiId}</span>
+        <button class="copy-btn" onclick="copyUPI()" data-testid="upi-copy">Copy</button>
+      </div>
+      <a class="btn btn-primary" href="${upiUrl}" style="width:100%;justify-content:center" data-testid="upi-open-app">
+        Open UPI App · Pay ${fmt(amount)}
+      </a>
+      <p style="font-size:0.8rem;color:var(--ink-soft);margin-top:18px;margin-bottom:0">
+        After paying, send the screenshot to <strong>${SHOP_CONFIG.phone}</strong> on WhatsApp to confirm.
+      </p>
+    </div>`;
+  modal.classList.add("show");
+}
+function closeUPI() { $("#upi-modal")?.classList.remove("show"); }
+function copyUPI() {
+  navigator.clipboard.writeText(SHOP_CONFIG.upiId);
+  toast("UPI ID copied");
+}
+
+/* ---------- WHATSAPP FLOAT + FOOTER ---------- */
+function injectGlobals() {
+  // WhatsApp float
+  if (!$(".wa-float")) {
+    const wa = document.createElement("a");
+    wa.className = "wa-float";
+    wa.href = `https://wa.me/${SHOP_CONFIG.whatsapp}?text=Hi%20${encodeURIComponent(SHOP_CONFIG.brand)}!%20I%20have%20a%20question.`;
+    wa.target = "_blank";
+    wa.rel = "noopener";
+    wa.setAttribute("data-testid", "wa-float");
+    wa.innerHTML = `<i class="fa-brands fa-whatsapp"></i>`;
+    document.body.appendChild(wa);
+  }
+
+  // Footer
+  const foot = $("#footer-slot");
+  if (foot) {
+    foot.innerHTML = `
+      <footer>
+        <div class="container">
+          <div class="foot-grid">
+            <div>
+              <div class="foot-brand">Aarush <span>Art & Craft</span></div>
+              <p>${SHOP_CONFIG.tagline}<br>Crafted, painted and packed by hand.</p>
+              <div class="foot-socials">
+                <a href="${SHOP_CONFIG.instagram}" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="${SHOP_CONFIG.facebook}" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/${SHOP_CONFIG.whatsapp}" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+            </div>
+            <div>
+              <h4>Shop</h4>
+              <a href="products.html">All products</a>
+              ${CATEGORIES.slice(0, 4).map(c => `<a href="products.html?cat=${c.id}">${c.name}</a>`).join("")}
+            </div>
+            <div>
+              <h4>Help</h4>
+              <a href="contact.html">Contact</a>
+              <a href="cart.html">Your cart</a>
+              <a href="wishlist.html">Wishlist</a>
+            </div>
+            <div>
+              <h4>Reach us</h4>
+              <p>${SHOP_CONFIG.phone}<br>${SHOP_CONFIG.email}<br>${SHOP_CONFIG.address}</p>
+            </div>
+          </div>
+          <div class="foot-bottom">© ${new Date().getFullYear()} ${SHOP_CONFIG.brand}. All rights reserved.</div>
+        </div>
+      </footer>`;
+  }
+
+  // Mobile menu toggle
+  const toggle = $(".menu-toggle");
+  const links = $(".nav-links");
+  if (toggle && links) {
+    toggle.addEventListener("click", () => links.classList.toggle("open"));
+  }
+}
+
+/* ---------- INIT ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  injectGlobals();
+  updateBadges();
+
+  // Home
+  renderCategories("#cat-grid-home");
+  renderFeatured();
+
+  // Products page
+  if ($("#products-grid")) initProductsPage();
+  renderCategories("#cat-grid-products");
+
+  // Product detail
+  if ($("#detail-wrap")) initProductDetail();
+
+  // Cart
+  renderCart();
+
+  // Wishlist
+  renderWishlist();
+
+  // Contact form
+  const form = $("#contact-form");
+  if (form) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const msg = `Hi ${SHOP_CONFIG.brand}!%0A%0AName: ${encodeURIComponent(data.get("name"))}%0AEmail: ${encodeURIComponent(data.get("email"))}%0A%0A${encodeURIComponent(data.get("message"))}`;
+      window.open(`https://wa.me/${SHOP_CONFIG.whatsapp}?text=${msg}`, "_blank");
+      toast("Opening WhatsApp…");
+      form.reset();
+    });
+  }
+
+  // Close modal on backdrop click
+  document.addEventListener("click", e => {
+    if (e.target.id === "upi-modal") closeUPI();
+  });
+});
+return;
+}
+const items = cart.map(c => ({ ...findProduct(c.id), qty: c.qty })).filter(p => p.id);
+const subtotal = items.reduce((s, p) => s + p.price * p.qty, 0);
+const shipping = subtotal >= 999 ? 0 : 49;
+const total = subtotal + shipping;
+
+wrap.innerHTML =   <div class="cart-layout">   <div class="cart-items">   ${items.map(p => {   const cat = CATEGORIES.find(c => c.id === p.category);   return
+<div class="cart-item" data-testid="cart-item-${p.id}">
+<img src="${p.image}" alt="${p.name}">
+<div>
 <div class="cat">${cat ? cat.name : ""}</div>
 <h4>${p.name}</h4>
 <div class="qty-control" data-testid="qty-control-${p.id}">
