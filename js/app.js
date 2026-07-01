@@ -217,12 +217,12 @@ function initProductsPage() {
 
   });
 
-  $("#search-input").addEventListener("input", e => {
+   const searchInput = document.getElementById("search-input");
 
-    currentQuery = e.target.value.trim();
-
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    currentQuery = this.value.trim().toLowerCase();
     renderProducts();
-
   });
 
   renderProducts();
