@@ -223,6 +223,7 @@ if (searchInput) {
   searchInput.addEventListener("input", function () {
     currentQuery = this.value.trim().toLowerCase();
     renderProducts();
+  }
   });
 
   renderProducts();
@@ -233,9 +234,9 @@ if (searchInput) {
 
           behavior: "smooth"
 
-      });
+                          } });
 
-  }
+  
 
 }
 
