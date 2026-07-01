@@ -60,7 +60,7 @@ const SHOP_PRODUCTS = [
     id: 5,
     name: "Little Monk on Lotus — Acrylic Painting",
     price: 99,
-    category: "Handpainted",
+    category: "hand-painted",
     image: "images/littlemonk.png",
     gallery: [],
     description: "Original acrylic painting on canvas board.",
@@ -77,7 +77,7 @@ const SHOP_PRODUCTS = [
     gallery: [],
     description: "Pocket-sized hand-painted Ganesha on a lotus plate.",
     details: "Tiny circular wall plate hand-painted with a Ganesha on a pink lotus mandala. Fridge magnet,coated with glossy finish resin.Size -2inch.",
-    stock: "In Stock",
+    stock: "In stock",
     featured: false,
   },
   {
