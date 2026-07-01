@@ -57,7 +57,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 5,
-    name: "Little Monk on Lotus Fridge magnet",
+    name: "Little Monk on Lotus- Fridge magnet",
     price: 99,
     category: "hand-painted",
     image: "image/lotus bhuddha.jpg",
@@ -69,7 +69,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 6,
-    name: "Lotus ganesha fridge magnet",
+    name: "Lotus ganesha-fridge magnet",
     price: 89,
     category: "hand-painted",
     image: "image/lotus -Ganesha Fridge Magnet.png",
