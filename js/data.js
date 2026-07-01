@@ -37,7 +37,7 @@ const SHOP_PRODUCTS = [
     name: "Animals - painting kit",
     price: 99,
     category: "painting-kits",
-    image: "images/farmfriends.png",
+    image: "image/farmfriends.png",
     gallery: [],
     description: "Paint, pop & display your own animal.",
     details: "Comes with 4 pop figure, 6 acrylic paints, 1 paint brush and instructions. Safe for kids 3+. Dries in 20–30 minutes.",
