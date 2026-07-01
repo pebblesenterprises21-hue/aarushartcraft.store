@@ -57,9 +57,9 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 5,
-    name: "Little Monk on Lotus — Acrylic Painting",
+    name: "Little Monk on Lotus",
     price: 99,
-    category: "Handpainted",
+    category: "hand-painted",
     image: "image/lotus bhuddha.jpg",
     gallery: [],
     description: "Original acrylic painting on canvas board.",
