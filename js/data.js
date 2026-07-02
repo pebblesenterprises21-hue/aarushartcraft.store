@@ -1,7 +1,7 @@
   
 const CATEGORIES = [
   { id: "painting-kits", name: "Painting Kits", icon: "fa-paint-roller" },
-  { id: "hand-painted",  name: "Hand-Painted",  icon: "fa-paint-brush" },
+  { id: "hand-painted",  name: "Fridge magnets",  icon: "fa-paint-brush" },
   { id: "divine",        name: "Divine Idols",  icon: "fa-om" },
   { id: "wall-art",      name: "Wall Art",      icon: "fa-palette" },
   { id: "gifts",         name: "Gift Sets",     icon: "fa-gift" },
@@ -61,7 +61,7 @@ const SHOP_PRODUCTS = [
     name: "Little Monk on Lotus — Acrylic Painting",
     price: 99,
     category: "hand-painted",
-    image: "image/littlemonk.png",
+    image: "image/lotus bhuddha.jpg",
     gallery: [],
     description: "Original acrylic painting on canvas board.",
     details: "A peaceful monk meditating on a pink lotus.. Hand-painted in acrylic. Fridge magnet, coated with glossy finish.Size - 2inch.",
