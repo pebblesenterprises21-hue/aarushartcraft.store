@@ -64,8 +64,8 @@ const SHOP_PRODUCTS = [
     image: "image/lotus bhuddha.jpg",
     gallery: [],
     description: "Original acrylic painting on canvas board.",
-    details: "A peaceful monk meditating on a pink lotus.. Hand-painted in acrylic. Fridge magnet, coated with glossy finish.Size - 2inch.",
-    stock: "In Stock",🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique
+    details: "A peaceful monk meditating on a pink lotus.. Hand-painted in acrylic. Fridge magnet, coated with glossy finish.Size - 2inch.🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique",
+    stock: "In Stock",
     featured: true,
   },
   {
@@ -78,7 +78,7 @@ const SHOP_PRODUCTS = [
     description: "Pocket-sized hand-painted Ganesha on a lotus plate.",
     details: "Tiny circular wall plate hand-painted with a Ganesha on a pink lotus mandala. Fridge magnet,coated with glossy finish resin.Size -2inch.",
     stock: "In stock",
-    featured: false,🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique
+    featured: false,
   },
   {
     id: 7,
@@ -162,8 +162,7 @@ id: 12,
     description: "BEe Happy Fridge magnet -3D, handpainted",
     details: "A cute BEe Happy Fridge magnet painted and coated with glossy finish.",
     stock: "Made to Order",
-    featured: true,🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique
-},
+    featured: true,
 ];
 
 const SHOP_CONFIG = {
