@@ -558,4 +558,10 @@ document.addEventListener("DOMContentLoaded", () => {
       window.open(`https://wa.me/${SHOP_CONFIG.whatsapp}?text=${msg}`, "_blank");
       toast("Opening WhatsApp…");
       form.reset();
-    });
+    });  }
+
+  // Close modal on backdrop click
+  document.addEventListener("click", e => {
+    if (e.target.id === "upi-modal") closeUPI();
+  });
+});
