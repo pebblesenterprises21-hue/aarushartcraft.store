@@ -163,6 +163,7 @@ id: 12,
     details: "A cute BEe Happy Fridge magnet painted and coated with glossy finish.",
     stock: "Made to Order",
     featured: true,
+  }
 ];
 
 const SHOP_CONFIG = {
