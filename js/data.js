@@ -16,7 +16,7 @@ const SHOP_PRODUCTS = [
     image: "image/ganesha-figurines.png",   // ← REPLACE with your GitHub Pages image path
     gallery: [],
     description: " Ganesha hand-painted on POP and pasted on MDF, coated for glossy look.",
-    details: "A serene Ganesha figurine sculpted and hand-painted in soft lavender with a pink crown. Each piece is one-of-a-kind.",
+    details: "A serene Ganesha figurine sculpted and hand-painted in soft lavender with a pink crown. Each piece is one-of-a-kind,🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique.",
     stock: "In Stock",
     featured: true,
   },
@@ -65,7 +65,7 @@ const SHOP_PRODUCTS = [
     gallery: [],
     description: "Original acrylic painting on canvas board.",
     details: "A peaceful monk meditating on a pink lotus.. Hand-painted in acrylic. Fridge magnet, coated with glossy finish.Size - 2inch.",
-    stock: "In Stock",
+    stock: "In Stock",🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique
     featured: true,
   },
   {
@@ -78,7 +78,7 @@ const SHOP_PRODUCTS = [
     description: "Pocket-sized hand-painted Ganesha on a lotus plate.",
     details: "Tiny circular wall plate hand-painted with a Ganesha on a pink lotus mandala. Fridge magnet,coated with glossy finish resin.Size -2inch.",
     stock: "In stock",
-    featured: false,
+    featured: false,🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique
   },
   {
     id: 7,
@@ -162,7 +162,7 @@ id: 12,
     description: "BEe Happy Fridge magnet -3D, handpainted",
     details: "A cute BEe Happy Fridge magnet painted and coated with glossy finish.",
     stock: "Made to Order",
-    featured: true,
+    featured: true,🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish are natural and make each product unique
 },
 ];
 
