@@ -152,6 +152,18 @@ id: 12,
     stock: "Made to Order",
     featured: true,
 },
+  {
+    id: 13,
+    name: "BEe Happy ",
+    price: 99,
+    category: "hand-painted",
+    image: "image/BEe Happy Fridge magnet.png",
+    gallery: [],
+    description: "BEe Happy Fridge magnet -3D, handpainted",
+    details: "A cute BEe Happy Fridge magnet painted and coated with glossy finish.",
+    stock: "Made to Order",
+    featured: true,
+},
 ];
 
 const SHOP_CONFIG = {
