@@ -61,7 +61,7 @@ const SHOP_PRODUCTS = [
     name: "Little Monk on Lotus — Acrylic Painting",
     price: 99,
     category: "hand-painted",
-    image: "images/littlemonk.png",
+    image: "image/littlemonk.png",
     gallery: [],
     description: "Original acrylic painting on canvas board.",
     details: "A peaceful monk meditating on a pink lotus.. Hand-painted in acrylic. Fridge magnet, coated with glossy finish.Size - 2inch.",
