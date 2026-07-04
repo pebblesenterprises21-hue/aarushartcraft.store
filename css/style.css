@@ -937,3 +937,6 @@ footer {
   }
   .wa-float { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.4rem; }
 }
+.nav-actions a[aria-label="Search"] {
+    display: none;
+}
