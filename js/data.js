@@ -5,6 +5,7 @@ const CATEGORIES = [
   { id: "divine",        name: "Divine Idols",  icon: "fa-om" },
   { id: "handmade-jewelry", name: "Handmade Jewelry", icon: "fa-palette" },
   { id: "scented-candles", name: "Scented Candles", icon: "fa-gift" },
+  { id: "Crochet", name: "Crochet", icon: "fa-gift" },
 ];
 
 const SHOP_PRODUCTS = [
@@ -22,7 +23,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 2,
-    name: "Unicorn Magic — DIY Painting Set",
+    name: "Unicorn Magic  DIY Painting Set",
     price: 120,
     category: "painting-kits",
     image: "image/unicorn.png",
@@ -34,7 +35,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 3,
-    name: "Animals -DIY painting kit",
+    name: "Animals DIY painting kit",
     price: 120,
     category: "painting-kits",
     image: "image/farmfriends.png",
@@ -46,7 +47,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 4,
-    name: "Space theme - DIY painting Kit",
+    name: "Space theme DIY painting Kit",
     price: 99,
     category: "painting-kits",
     image: "image/spacetheme.png",
@@ -58,7 +59,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 5,
-    name: "Little Monk on Lotus — Acrylic Painting",
+    name: "Little Monk on Lotus Acrylic Painting",
     price: 99,
     category: "hand-painted",
     image: "image/lotus bhuddha.jpg",
@@ -82,7 +83,7 @@ const SHOP_PRODUCTS = [
   },
   {
     id: 7,
-    name: " Ocean Friends- DIY painting Kit",
+    name: " Ocean Friends DIY painting Kit",
     price: 99,
     category: "painting-kits",
     image: "image/ocean-friends.png",
@@ -106,7 +107,7 @@ const SHOP_PRODUCTS = [
   },
 {
 id: 9,
-    name: "Avengers theme - Wooden painting Kit",
+    name: "Avengers theme Wooden painting Kit",
     price: 120,
     category: "painting-kits",
     image: "image/avengers.png",
@@ -118,7 +119,7 @@ id: 9,
 },
 {
 id: 10,
-    name: "Cat theme - DIY painting KIt",
+    name: "Cat theme DIY painting KIt",
     price: 120,
     category: "painting-kits",
     image: "image/cute cats.png",
@@ -130,7 +131,7 @@ id: 10,
 },
 {
 id: 11,
-    name: "Cartoon character stitch theme - DIY painting Kit",
+    name: "Cartoon character stitch theme DIY painting Kit",
     price: 99,
     category: "painting-kits",
     image: "image/lilyandstitch.png",
@@ -142,7 +143,7 @@ id: 11,
 },
 {
 id: 12,
-    name: "Iron Man - DIY painting kit",
+    name: "Iron Man  DIY painting kit",
     price: 120,
     category: "painting-kits",
     image: "image/ironman.png",
