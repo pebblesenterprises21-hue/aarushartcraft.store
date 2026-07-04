@@ -5,7 +5,7 @@ const CATEGORIES = [
   { id: "divine",        name: "Divine Idols",  icon: "fa-om" },
   { id: "handmade-jewelry", name: "Handmade Jewelry", icon: "fa-palette" },
   { id: "scented-candles", name: "Scented Candles", icon: "fa-gift" },
-  { id: "Crochet", name: "Crochet", icon: "fa-gift" },
+  { id: "crochet", name: "Crochet", icon: "fa-gift" },
 ];
 
 const SHOP_PRODUCTS = [
