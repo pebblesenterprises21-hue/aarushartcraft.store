@@ -164,7 +164,7 @@ id: 12,
     details: "A cute BEe Happy Fridge magnet painted and coated with glossy finish.",
     stock: "In stock",
     featured: true,
-  }
+  },
   {
     id: 14,
     name: "Rainbow Ganesha ",
@@ -173,7 +173,7 @@ id: 12,
     image: "image/rainbow ganesha.png",
     gallery: [],
     description: "Paper mache rainbow ganesha -3D, handpainted, coated",
-    details: " Paper mache rainbow ganesha which brings to colourfulness to your home.",
+    details: "details: "Handcrafted Rainbow Ganesha fridge magnet made from POP and mounted on MDF. Carefully hand-painted with vibrant rainbow colors and finished with a protective glossy coating for long-lasting shine. Perfect for refrigerators, lockers, office cabinets, or as a thoughtful return gift. Size: Approximately 2 inches.\n\n🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish make each product truly unique." .",
     stock: "In stock",
     featured: true,
   }
