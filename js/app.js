@@ -521,17 +521,18 @@ function injectGlobals() {
   // Mobile menu toggle
   // Mobile Drawer
 const menuBtn = document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
 const drawer = document.getElementById("sideDrawer");
 const overlay = document.getElementById("drawerOverlay");
 const closeBtn = document.getElementById("closeDrawer");
 
 if (menuBtn && drawer && overlay && closeBtn) {
 
-  menuBtn.addEventListener("click", () => {
+  function openDrawer() {
     drawer.classList.add("open");
     overlay.classList.add("show");
     document.body.classList.add("drawer-open");
-  });
+  }
 
   function closeDrawer() {
     drawer.classList.remove("open");
@@ -539,13 +540,15 @@ if (menuBtn && drawer && overlay && closeBtn) {
     document.body.classList.remove("drawer-open");
   }
 
+  menuBtn.addEventListener("click", openDrawer);
   closeBtn.addEventListener("click", closeDrawer);
   overlay.addEventListener("click", closeDrawer);
-  
-document.querySelectorAll(".drawer-links a").forEach(link => {
-  link.addEventListener("click", closeDrawer);
-}); 
-}
+
+  document.querySelectorAll(".drawer-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      closeDrawer();
+    });
+  });
 }
 /* ---------- INIT ---------- */
 document.addEventListener("DOMContentLoaded", () => {
