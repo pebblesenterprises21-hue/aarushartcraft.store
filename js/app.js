@@ -520,7 +520,7 @@ function injectGlobals() {
 
   // Mobile menu toggle
   // Mobile Drawer
-const menuBtn = document.getElementById("menuBtn");
+
 const menuBtn = document.getElementById("menuBtn");
 const drawer = document.getElementById("sideDrawer");
 const overlay = document.getElementById("drawerOverlay");
@@ -549,6 +549,7 @@ if (menuBtn && drawer && overlay && closeBtn) {
       closeDrawer();
     });
   });
+}
 }
 /* ---------- INIT ---------- */
 document.addEventListener("DOMContentLoaded", () => {
