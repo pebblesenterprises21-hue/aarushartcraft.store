@@ -541,6 +541,10 @@ if (menuBtn && drawer && overlay && closeBtn) {
 
   closeBtn.addEventListener("click", closeDrawer);
   overlay.addEventListener("click", closeDrawer);
+  
+document.querySelectorAll(".drawer-links a").forEach(link => {
+  link.addEventListener("click", closeDrawer);
+}); 
 }
 }
 /* ---------- INIT ---------- */
