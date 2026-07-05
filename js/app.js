@@ -582,3 +582,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.id === "upi-modal") closeUPI();
   });
 });
+   const slides = [
+    "image/BEe Happy Fridge magnet.png",
+    "image/lotus -Ganesha Fridge Magnet.png",
+"image/rainbow ganesha.png",
+"image/cute cats.png",
+"image/ganesha-figurines.png",
+"image/flower-ganesha figurines.png"
+];
+
+let currentSlide = 0;
+
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    const img = document.getElementById("sliderImage");
+    if (img) {
+        img.src = slides[currentSlide];
+    }
+}, 3000);
