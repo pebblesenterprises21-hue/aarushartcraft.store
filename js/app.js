@@ -519,11 +519,28 @@ function injectGlobals() {
   }
 
   // Mobile menu toggle
-  const toggle = $(".menu-toggle");
-  const links = $(".nav-links");
-  if (toggle && links) {
-    toggle.addEventListener("click", () => links.classList.toggle("open"));
+  // Mobile Drawer
+const menuBtn = document.getElementById("menuBtn");
+const drawer = document.getElementById("sideDrawer");
+const overlay = document.getElementById("drawerOverlay");
+const closeBtn = document.getElementById("closeDrawer");
+
+if (menuBtn && drawer && overlay && closeBtn) {
+
+  menuBtn.addEventListener("click", () => {
+    drawer.classList.add("open");
+    overlay.classList.add("show");
+    document.body.classList.add("drawer-open");
+  });
+
+  function closeDrawer() {
+    drawer.classList.remove("open");
+    overlay.classList.remove("show");
+    document.body.classList.remove("drawer-open");
   }
+
+  closeBtn.addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
 }
 
 /* ---------- INIT ---------- */
