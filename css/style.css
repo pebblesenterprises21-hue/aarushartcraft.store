@@ -1097,19 +1097,29 @@ footer {
 }
 
 .hero-logo{
-    position:absolute;
-    width:240px;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
+    width:180px;
+    display:block;
+    margin:auto;
     border-radius:50%;
-    background:white;
+    background:#fff;
     padding:10px;
-    z-index:5;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-.img1{position:absolute;left:0;top:20px;width:180px;border-radius:20px;}
-.img2{position:absolute;right:0;top:20px;width:180px;border-radius:20px;}
-.img3{position:absolute;right:20px;bottom:20px;width:200px;border-radius:20px;}
-.img4{position:absolute;left:20px;bottom:20px;width:180px;border-radius:20px;}
-.img5{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:170px;border-radius:20px;}
+.hero-product{
+    width:100%;
+    border-radius:20px;
+    transition:.35s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.hero-product:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
