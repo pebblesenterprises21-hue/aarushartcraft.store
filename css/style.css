@@ -1134,3 +1134,8 @@ footer {
     box-shadow:0 10px 25px rgba(0,0,0,.15);
     transition:opacity .5s;
 }
+
+.hero-slider{
+    max-width:700px;
+    margin:40px auto 0;
+}
