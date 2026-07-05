@@ -25,10 +25,71 @@
         
         <a href="wishlist.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge" data-wish-count style="display:none">0</span></a>
         <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge" data-cart-count style="display:none">0</span></a>
-        <button class="menu-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+    <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </nav>
+  <!-- Overlay -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- Side Drawer -->
+<div class="side-drawer" id="sideDrawer">
+
+  <div class="drawer-header">
+      <button class="close-drawer" id="closeDrawer">
+          <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <img src="images/logo.png" class="drawer-logo">
+
+      <h2>Aarush Art & Craft</h2>
+
+      <p>Handmade with ❤️ from Chennai</p>
+  </div>
+
+  <div class="drawer-links">
+
+      <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          Home
+      </a>
+
+      <a href="products.html">
+          <i class="fa-solid fa-store"></i>
+          All Products
+      </a>
+
+      <a href="products.html#categories">
+          <i class="fa-solid fa-layer-group"></i>
+          Categories
+      </a>
+
+      <a href="wishlist.html">
+          <i class="fa-regular fa-heart"></i>
+          Wishlist
+      </a>
+
+      <a href="cart.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Cart
+      </a>
+
+      <a href="contact.html">
+          <i class="fa-solid fa-phone"></i>
+          Contact
+      </a>
+
+  </div>
+
+  <div class="drawer-bottom">
+      <a href="#" class="drawer-btn">
+          Sign In
+      </a>
+  </div>
+
+</div>
 
   <section class="hero">
     <div class="container">
