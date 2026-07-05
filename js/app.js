@@ -542,7 +542,7 @@ if (menuBtn && drawer && overlay && closeBtn) {
   closeBtn.addEventListener("click", closeDrawer);
   overlay.addEventListener("click", closeDrawer);
 }
-
+}
 /* ---------- INIT ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   injectGlobals();
