@@ -550,7 +550,7 @@ if (menuBtn && drawer && overlay && closeBtn) {
     });
   });
 }
-}
+
 /* ---------- INIT ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   injectGlobals();
