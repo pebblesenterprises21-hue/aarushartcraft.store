@@ -1148,3 +1148,23 @@ footer {
     gap:12px;
     text-decoration:none;
 }
+.brand span{
+    display:block;
+    line-height:1.1;
+}
+
+@media (max-width:640px){
+
+.nav-logo{
+    width:60px;
+    height:60px;
+}
+
+.brand{
+    gap:10px;
+}
+
+.brand span{
+    font-size:18px;
+}
+}
