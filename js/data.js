@@ -165,6 +165,18 @@ id: 12,
     stock: "In stock",
     featured: true,
   }
+  {
+    id: 14,
+    name: "Rainbow Ganesha ",
+    price: 129,
+    category: "hand-painted",
+    image: "",
+    gallery: [],
+    description: "Paper mache rainbow ganesha -3D, handpainted, coated",
+    details: " Paper mache rainbow ganesha which brings to colourfulness to your home.",
+    stock: "In stock",
+    featured: true,
+  }
 ];
 
 const SHOP_CONFIG = {
