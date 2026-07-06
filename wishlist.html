@@ -8,15 +8,63 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <nav class="nav"><div class="nav-inner">
-    <a href="index.html" class="brand">Aarush <span>Art &amp; Craft</span></a>
-    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Shop</a><a href="products.html#categories">Categories</a><a href="contact.html">Contact</a></div>
-    <div class="nav-actions">
-      <a href="wishlist.html" class="icon-btn"><i class="fa-regular fa-heart"></i><span class="badge" data-wish-count style="display:none">0</span></a>
-      <a href="cart.html" class="icon-btn"><i class="fa-solid fa-bag-shopping"></i><span class="badge" data-cart-count style="display:none">0</span></a>
-      <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+  <nav class="nav">
+  <div class="nav-inner">
+
+    <a href="index.html" class="brand">
+      <img src="image/aarush logo.png" class="nav-logo" alt="Aarush Logo">
+      <span>Aarush <span>Art &amp; Craft</span></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Shop</a>
+      <a href="products.html#categories">Categories</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </div></nav>
+
+    <div class="nav-actions">
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge" data-wish-count style="display:none">0</span>
+      </a>
+
+      <a href="cart.html" class="icon-btn" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge" data-cart-count style="display:none">0</span>
+      </a>
+
+      <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<div class="side-drawer" id="sideDrawer">
+  <div class="drawer-header">
+    <button class="close-drawer" id="closeDrawer">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img src="image/aarush logo.png" class="drawer-logo">
+    <h2>Aarush Art & Craft</h2>
+    <p>Handmade with ❤️ from Chennai</p>
+  </div>
+  <div class="drawer-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="products.html"><i class="fa-solid fa-store"></i> All Products</a>
+    <a href="products.html"><i class="fa-solid fa-layer-group"></i> Categories</a>
+    <a href="wishlist.html"><i class="fa-regular fa-heart"></i> Wishlist</a>
+    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+    <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
+  </div>
+  <div class="drawer-bottom">
+    <a href="products.html" class="drawer-btn">Shop Now</a>
+  </div>
+</div>
   <div class="container breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Wishlist</span></div>
   <section class="list-page"><div class="container">
     <div style="margin-bottom:36px"><h1>Saved for later</h1><p style="color:var(--ink-soft);margin-top:6px">Your favourites, all in one place.</p></div>
