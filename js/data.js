@@ -176,7 +176,19 @@ id: 12,
   details: "Handcrafted Rainbow Ganesha fridge magnet made from paper mache and mounted on MDF. Carefully hand-painted with vibrant rainbow colors and finished with a protective glossy coating for long-lasting shine. Perfect for refrigerators, lockers, office cabinets, or as a thoughtful return gift. Size: Approximately 2 inches. 🎨 Handmade Note: Every piece is handcrafted with care. Slight variations in color, texture, shape, or finish make each product truly unique.",
   stock: "In Stock",
   featured: true,
-},   
+}, 
+  {
+    id: 15,
+    name: "Purple birthday candle ",
+    price: 99,
+    category: "scented-candles",
+    image: "image/purple candle.png",
+    gallery: [],
+    description: "Handmade purple with gold highlighted birthday number candles",
+    details: "Elegant violet colour number candle make your birthday party special.",
+    stock: "In stock",
+    featured: true,
+  },
   
 ];
 
