@@ -4,7 +4,7 @@ const CATEGORIES = [
   { id: "hand-painted",  name: "Fridge magnets",  icon: "fa-paint-brush" },
   { id: "divine",        name: "Divine Idols",  icon: "fa-om" },
   { id: "handmade-jewelry", name: "Handmade Jewelry", icon: "fa-palette" },
-  { id: "scented-candles", name: "Scented Candles", icon: "fa-gift" },
+  { id: "scented-candles", name: "Candles", icon: "fa-gift" },
   { id: "activity kit", name: "Activity Kit", icon: "fa-gift" },
 ];
 
