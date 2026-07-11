@@ -400,18 +400,16 @@ section { padding: 80px 0; }
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
-.product-img-wrap {
-  position: relative;
-  height: 340px;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 18px 18px 0 0;
+.product-img-wrap{
+    aspect-ratio:1/1;
+    height:auto;
+    overflow:hidden;
 }
 .product-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
 }
 .product-card:hover .product-img-wrap img {
   transform: scale(1.06);
