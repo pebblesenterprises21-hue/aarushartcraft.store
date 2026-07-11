@@ -386,30 +386,6 @@ section { padding: 80px 0; }
 }
 
 /* ---------- PRODUCTS ---------- */
-@media (max-width:640px){
-
-.product-grid{
-    grid-template-columns: repeat(2, 1fr);
-    gap:12px;
-}
-
-.product-img-wrap{
-    height:170px;
-}
-
-.product-body{
-    padding:12px;
-}
-
-.product-name{
-    font-size:18px;
-}
-
-.product-price{
-    font-size:24px;
-}
-
-}
   
 .product-card {
   background: var(--white);
@@ -1189,4 +1165,35 @@ footer {
 .brand span{
     font-size:18px;
 }
+}
+/* Force 2 products per row on mobile */
+@media screen and (max-width:640px){
+
+.product-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:12px !important;
+}
+
+.product-img-wrap{
+    height:160px !important;
+}
+
+.product-body{
+    padding:10px !important;
+}
+
+.product-name{
+    font-size:15px !important;
+}
+
+.product-price{
+    font-size:18px !important;
+}
+
+.add-btn{
+    padding:8px 10px !important;
+    font-size:13px !important;
+}
+
 }
