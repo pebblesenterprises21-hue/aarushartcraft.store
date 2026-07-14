@@ -189,6 +189,18 @@ id: 12,
     stock: "In stock",
     featured: true,
   },
+  {
+id: 15,
+    name: "Concrete candles",
+    price: 149,
+    category: "scented-candles",
+    image: "concrete candles.png",
+    gallery: [],
+    description: "Handmade concrete candle holder with rose scented candle",
+    details: "Elegant design which make your home beautiful.",
+    stock: "In stock",
+    featured: true,
+},
   
 ];
 
