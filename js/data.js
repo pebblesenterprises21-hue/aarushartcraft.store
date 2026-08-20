@@ -22,6 +22,18 @@ const SHOP_PRODUCTS = [
     featured: true,
   },
   {
+    id: 16,
+    name: "shinchan diy painting kit",
+    price: 120,
+    category: "painting-kits",
+    image: "image/shinchan painting kit.png",   // ← REPLACE with your GitHub Pages image path
+    gallery: [],
+    description: "Shinchan your favourite cartoon character painting kit.",
+    details: "Colour your favourite cartoon character and showcase - kit include two shinchan pop model, six colour with brush and instructions.",
+    stock: "In Stock",
+    featured: true,
+  },
+  {
     id: 2,
     name: "Unicorn Magic  DIY Painting Set",
     price: 120,
@@ -190,7 +202,7 @@ id: 12,
     featured: true,
   },
   {
-id: 15,
+id: 16,
     name: "Concrete candles",
     price: 149,
     category: "scented-candles",
